@@ -102,7 +102,7 @@ public class Simulator {
     private void updateViews(){
     	parkeerGarage.tick();
         // Update the car park view.
-        carParkView.updateView(parkeerGarage);	
+        carParkView.repaint(parkeerGarage);	
     }
     
     private void carsArriving(){

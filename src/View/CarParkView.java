@@ -5,10 +5,11 @@ import javax.swing.JPanel;
 
 import Model.*;
 
-public class CarParkView extends JPanel {
+public class CarParkView extends AbstractView {
         
         private Dimension size;
         private Image carParkImage;   
+        //private Simulator model;
         //added
         private ParkeerGarage parkeerGarage;
         //ParkeerGarage = new ParkeerGarage(); 
@@ -16,7 +17,8 @@ public class CarParkView extends JPanel {
         /**
          * Constructor for objects of class CarPark
          */
-        public CarParkView() {
+        public CarParkView(Simulator model) {
+        	super(model);
             size = new Dimension(0, 0);
         }
     
@@ -46,7 +48,7 @@ public class CarParkView extends JPanel {
             }
         }
     
-        public void updateView(ParkeerGarage parkeerGarage) {
+        public void repaint(ParkeerGarage parkeerGarage) {
             // Create a new car park image if the size has changed.
             if (!size.equals(getSize())) {
                 size = getSize();
@@ -63,7 +65,7 @@ public class CarParkView extends JPanel {
                     }
                 }
             }
-            //repaint();   ????
+            repaint();  
         }
     
         /**

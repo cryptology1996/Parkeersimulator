@@ -18,8 +18,8 @@ public class Parkeersimulator
 	{
 		simulator  = new Simulator();
 	    controller = new Controller(simulator);
-		carParkView  = new CarParkView(simulator);
 		parkeergarage = new ParkeerGarage(3, 6, 30);
+		carParkView  = new CarParkView(parkeergarage);
 		JFrame frame = new JFrame();
 		frame.setSize(1920, 1080);
 		frame.setResizable(false);

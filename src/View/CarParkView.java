@@ -16,9 +16,14 @@ public class CarParkView extends AbstractView {
         /**
          * Constructor for objects of class CarPark
          */
-        public CarParkView(Simulator model) {
+        public CarParkView(ParkeerGarage model) {
         	super(model);
         	size = new Dimension(0, 0);
+        	   updateViewer();
+        }
+        
+        public void updateViewer(){
+        	model.notifyViews();
         }
     
         /**

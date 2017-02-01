@@ -21,13 +21,9 @@ public class ParkeerGarage extends AbstractModel{
    //    contentPane.add(carParkView, BorderLayout.CENTER);
    //     pack();
    //     setVisible(true);
-
-   updateView();
     }
     
-    public void updateView(){
-    	notifyViews();
-    }
+
 	public int getNumberOfFloors() {
         return numberOfFloors;
     }

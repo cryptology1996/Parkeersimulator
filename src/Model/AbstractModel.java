@@ -20,6 +20,7 @@ public abstract class AbstractModel {
 	
 	public void addView(AbstractView view) {
 		views.add(view);
+		System.out.println(views.size());
 	}
 	
 	public void notifyViews() {

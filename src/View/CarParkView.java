@@ -1,7 +1,6 @@
 package View;
 
 import java.awt.*;
-import javax.swing.JPanel;
 
 import Model.*;
 
@@ -19,7 +18,8 @@ public class CarParkView extends AbstractView {
          */
         public CarParkView(Simulator model) {
         	super(model);
-            size = new Dimension(0, 0);
+        	this.parkeerGarage = parkeerGarage;
+        	size = new Dimension(0, 0);
         }
     
         /**
@@ -48,12 +48,12 @@ public class CarParkView extends AbstractView {
             }
         }
     
-        public void updateView(ParkeerGarage parkeerGarage) {
+        public void updateView() {
             // Create a new car park image if the size has changed.
             if (!size.equals(getSize())) {
                 size = getSize();
                 carParkImage = createImage(size.width, size.height);
-                this.parkeerGarage = parkeerGarage;
+                
             }
             Graphics graphics = carParkImage.getGraphics();
             for(int floor = 0; floor < parkeerGarage.getNumberOfFloors(); floor++) {

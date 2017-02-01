@@ -118,8 +118,8 @@ public void actionPerformed(ActionEvent e)
 		 public void run (){
 			ActionEvent e = getActionEvent();
 			String command = e.getActionCommand();
-		if (command == "One Step"){
-			simulator.runCommand(1);
+			if (command == "One Step"){
+				simulator.runCommand(1);
 			} 
 			if (command == "Hunderd Step"){
 				simulator.runCommand(100);

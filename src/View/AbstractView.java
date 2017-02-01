@@ -8,7 +8,7 @@ public abstract class AbstractView extends JPanel {
 
 	public AbstractView(Simulator model) {
 		this.model=model;
-		//model.addView(this);
+		model.addView(this);
 	}
 	
 	public Simulator getModel() {

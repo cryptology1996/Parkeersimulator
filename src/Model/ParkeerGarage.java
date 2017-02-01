@@ -1,11 +1,6 @@
 package Model;
-
-import javax.swing.*;
-import java.awt.*;
-
-import View.CarParkView;
 //SimulatorView now ParkeerGarage
-public class ParkeerGarage{
+public class ParkeerGarage extends AbstractModel{
     //private CarParkView carParkView; // dit moet er uit worden gewerkt
     private int numberOfFloors;
     private int numberOfRows;

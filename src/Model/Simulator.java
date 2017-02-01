@@ -5,7 +5,7 @@ import java.util.Random;
 import Model.*;
 import View.*;
 
-public class Simulator {
+public class Simulator extends AbstractModel{
 
 	private static final String AD_HOC = "1";
 	private static final String PASS = "2";

@@ -1,6 +1,6 @@
 package Model;
 
-public class Location {
+public class Location extends AbstractModel{
 
     private int floor;
     private int row;

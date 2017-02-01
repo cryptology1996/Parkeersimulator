@@ -14,10 +14,6 @@ public abstract class AbstractModel {
 	private List<AbstractView> views;
 	
 	
-	/**
-	 * constructor for AbstractModel
-	 */
-	
 	public AbstractModel() {
 		views=new ArrayList<AbstractView>();
 	}

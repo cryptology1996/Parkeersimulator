@@ -22,7 +22,7 @@ public class ParkeerGarage extends AbstractModel{
    //     pack();
    //     setVisible(true);
 
-   // updateView();
+   updateView();
     }
     
     public void updateView(){

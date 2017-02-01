@@ -16,11 +16,10 @@ public class Parkeersimulator
 	
 	public Parkeersimulator()
 	{
-		parkeergarage = new ParkeerGarage(3, 6, 30);
 		simulator  = new Simulator();
-	    carParkView  = new CarParkView(simulator);
 	    controller = new Controller(simulator);
-	    carParkView.updateView();
+		carParkView  = new CarParkView(simulator);
+		parkeergarage = new ParkeerGarage(3, 6, 30);
 		JFrame frame = new JFrame();
 		frame.setSize(1920, 1080);
 		frame.setResizable(false);

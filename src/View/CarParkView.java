@@ -18,7 +18,6 @@ public class CarParkView extends AbstractView {
          */
         public CarParkView(Simulator model) {
         	super(model);
-        	this.parkeerGarage = parkeerGarage;
         	size = new Dimension(0, 0);
         }
     
@@ -34,6 +33,7 @@ public class CarParkView extends AbstractView {
          * internal image to screen.
          */
         public void paintComponent(Graphics g) {
+        	super.paintComponent(g);
             if (carParkImage == null) {
                 return;
             }

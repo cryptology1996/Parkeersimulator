@@ -76,9 +76,6 @@ public Controller(Simulator simulator) {
         l4.gridy = 0;
         stop.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
         add(stop, l4);
-        
-        setVisible(true);
-		
 	}
 
 /**

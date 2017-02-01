@@ -3,6 +3,7 @@ package Frame;
 import java.awt.*;
 import javax.swing.*;
 import Controller.*;
+import Model.ParkeerGarage;
 import Model.Simulator;
 import View.*;
 
@@ -11,21 +12,23 @@ public class Parkeersimulator
 	private Simulator simulator;
 	private AbstractView carParkView;
 	private Controller controller;
+	private ParkeerGarage parkeergarage;
 	
 	public Parkeersimulator()
 	{
+		parkeergarage = new ParkeerGarage(3, 6, 30);
 		simulator  = new Simulator();
 	    carParkView  = new CarParkView(simulator);
 	    controller = new Controller(simulator);
-	    
+	    carParkView.updateView();
 		JFrame frame = new JFrame();
-		GridLayout Layout = new GridLayout(0,2);
-		frame.setSize(1280, 800);
+		frame.setSize(1920, 1080);
 		frame.setResizable(false);
-		frame.setLayout(Layout);
+		frame.setLayout(null);
 		frame.getContentPane().add(controller);
 		frame.getContentPane().add(carParkView);
-		carParkView.updateView();
+		controller.setBounds(0, 210, 450, 50);
+		carParkView.setBounds(230, 10, 200, 200);
 		//frame.getContentPane().add(pieview);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);

@@ -102,7 +102,7 @@ public class Simulator extends AbstractModel{
     private void updateViews(){
     	parkeerGarage.tick();
         // Update the car park view.
-        carParkView.updateView(parkeerGarage);	
+        notifyViews();
     }
     
     private void carsArriving(){

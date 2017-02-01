@@ -48,7 +48,7 @@ public class CarParkView extends AbstractView {
             }
         }
     
-        public void repaint(ParkeerGarage parkeerGarage) {
+        public void updateView(ParkeerGarage parkeerGarage) {
             // Create a new car park image if the size has changed.
             if (!size.equals(getSize())) {
                 size = getSize();

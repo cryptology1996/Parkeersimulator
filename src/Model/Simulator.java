@@ -17,7 +17,7 @@ public class Simulator {
     //private SimulatorView simulatorView;
     private ParkeerGarage parkeerGarage;
     private CarParkView carParkView;
-
+    private  boolean run = true;
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
@@ -44,7 +44,7 @@ public class Simulator {
     }
 
     // new methode
-  public  void runCommand(int getal) {
+  public void runCommand(int getal) {
     	int i = getal;
     	while(i > 0 && run == true){
     		tick();

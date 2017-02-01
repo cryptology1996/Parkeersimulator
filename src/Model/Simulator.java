@@ -39,8 +39,8 @@ public class Simulator {
         paymentCarQueue = new CarQueue();
         exitCarQueue = new CarQueue();
         //simulatorView = new SimulatorView(3, 6, 30);
-        carParkView = new CarParkView();                // new
-        parkeerGarage = new ParkeerGarage(3, 6, 30);    // new
+       // carParkView = new CarParkView();                // new moved to main
+       // parkeerGarage = new ParkeerGarage(3, 6, 30);    // new
     }
 
     // new methode

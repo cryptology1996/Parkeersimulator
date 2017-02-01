@@ -43,6 +43,14 @@ public class Simulator {
         parkeerGarage = new ParkeerGarage(3, 6, 30);    // new
     }
 
+    // new methode
+  public  void runCommand(int getal) {
+    	int i = getal;
+    	while(i > 0 && run == true){
+    		tick();
+    		i--; }
+    	}
+    
     public void run() {
         for (int i = 0; i < 10000; i++) {
             tick();

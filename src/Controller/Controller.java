@@ -23,15 +23,15 @@ public class Controller extends AbstractController implements ActionListener {
 	private JButton start;
 	private JButton stop;
 	private ActionEvent event;
-	
+
 	
 /**
 * Constructs an instance of the Controller
 * and add the buttons 1 step, 100 steps, start an stop to simulator 
 */
 	
-public Controller() {
-		
+public Controller(Simulator simulator) {
+		super (simulator);
 		
 		setLayout(new GridBagLayout());
     	setBackground(Color.LIGHT_GRAY);
@@ -102,6 +102,7 @@ public ActionEvent getActionEvent() {
 
 
 
+
 /**
  * Executes the the input action
  */
@@ -109,38 +110,38 @@ public ActionEvent getActionEvent() {
 public void actionPerformed(ActionEvent e)
 {
 	
-	// sets the received actionEvent, and creates a new thread
-	// setActionEvent(e);
-	// Thread performerThread = new Thread(){
+	 //sets the received actionEvent, and creates a new thread
+	 setActionEvent(e);
+	 Thread performerThread = new Thread(){
 		
 
-	//	 public void run (){
-	//		ActionEvent e = getActionEvent();
-	//		String command = e.getActionCommand();
-	//		if (command == "One Step"){
-	//			Simulator.runCommand(1);
-	//		} 
-	//		if (command == "Hunderd Step"){
-	//			Simulator.runCommand(100);
-	//			}
-	//		if (command == "Start"){
-	//			Simulator.runCommand(100000);
-	//		}
-	//		if (command == "Reset"){
-	//			try {
-	//				Runtime.getRuntime().exec("java -jar Parkeergarage.jar");
-	//			} catch (IOException e1) {
+		 public void run (){
+			ActionEvent e = getActionEvent();
+			String command = e.getActionCommand();
+		if (command == "One Step"){
+			simulator.runCommand(1);
+			} 
+			if (command == "Hunderd Step"){
+				simulator.runCommand(100);
+				}
+			if (command == "Start"){
+				simulator.runCommand(100000);
+			}
+		if (command == "Reset"){
+			try {
+				Runtime.getRuntime().exec("java -jar Parkeergarage.jar");
+				} catch (IOException e1) {
 					
-	//				e1.printStackTrace();
-	//			}
-	//		     System.exit(1);
-	//			
-	//		}
+				e1.printStackTrace();
+				}
+			     System.exit(1);
+				
+			}
 	
 		}
-	//	};
-	//	performerThread.start();
-//}
+		};
+		performerThread.start();
+		}
 
 }
 

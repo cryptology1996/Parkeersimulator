@@ -17,7 +17,7 @@ public class ParkeerGarage extends AbstractModel{
         cars = new Car[numberOfFloors][numberOfRows][numberOfPlaces];
         
     }
-    
+       
 
 	public int getNumberOfFloors() {
         return numberOfFloors;

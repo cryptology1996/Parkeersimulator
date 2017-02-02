@@ -42,12 +42,9 @@ public class Simulator extends AbstractModel{
         entrancePassQueue = new CarQueue();
         paymentCarQueue = new CarQueue();
         exitCarQueue = new CarQueue();
-        //simulatorView = new SimulatorView(3, 6, 30);
-       // carParkView = new CarParkView();                // new moved to main
-       //parkeerGarage = new ParkeerGarage(3, 6, 30);    // new
+
     }
 
-    // new methode
   public void runCommand(int getal) {
     	int i = getal;
     	while(i > 0 && run == true){

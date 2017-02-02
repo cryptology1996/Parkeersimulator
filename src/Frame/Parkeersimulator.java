@@ -17,9 +17,9 @@ public class Parkeersimulator
 	
 	public Parkeersimulator()
 	{
-		simulator  = new Simulator();
-	    controller = new Controller(simulator);
 	    parkeergarage = new ParkeerGarage(3, 6, 30);
+		simulator  = new Simulator(parkeergarage);
+	    controller = new Controller(simulator);
 	    CarParkView  = new CarParkView(parkeergarage);
 		screen = new JFrame("Parkeergarage Simulator");
 		screen.setSize(1920, 1030);
@@ -29,7 +29,7 @@ public class Parkeersimulator
 		screen.getContentPane().add(controller);
 		screen.getContentPane().add(CarParkView);
 		controller.setBounds(735, 900, 500, 50);
-		CarParkView.setBounds(10, 10, 800, 500);
+		CarParkView.setBounds(10, 10, 875, 445);
 		CarParkView.setBackground(Color.LIGHT_GRAY);
 		CarParkView.setBorder(BorderFactory.createLineBorder(Color.black));
 		controller.setBorder(BorderFactory.createLineBorder(Color.black));

@@ -21,7 +21,6 @@ public class Simulator extends AbstractModel{
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
-
     private int tickPause = 100;
 
     int weekDayArrivals= 100; // average number of arriving cars per hour
@@ -33,14 +32,15 @@ public class Simulator extends AbstractModel{
     int paymentSpeed = 7; // number of cars that can pay per minute
     int exitSpeed = 5; // number of cars that can leave per minute
 
-    public Simulator() {
+    public Simulator(ParkeerGarage parkeerGarage) {
+    	this.parkeerGarage = parkeerGarage;
         entranceCarQueue = new CarQueue();
         entrancePassQueue = new CarQueue();
         paymentCarQueue = new CarQueue();
         exitCarQueue = new CarQueue();
         //simulatorView = new SimulatorView(3, 6, 30);
        // carParkView = new CarParkView();                // new moved to main
-       // parkeerGarage = new ParkeerGarage(3, 6, 30);    // new
+       //parkeerGarage = new ParkeerGarage(3, 6, 30);    // new
     }
 
     // new methode

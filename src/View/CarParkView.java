@@ -29,7 +29,7 @@ public class CarParkView extends AbstractView {
          * Overridden. Tell the GUI manager how big we would like to be.
          */
         public Dimension getPreferredSize() {
-            return new Dimension(1920, 1000);
+            return new Dimension(800, 500);
         }
     
         /**
@@ -50,17 +50,25 @@ public class CarParkView extends AbstractView {
                     for(int place = 0; place < parkeerGarage.getNumberOfPlaces(); place++) {
                         Location location = new Location(floor, row, place);
                         Car car = parkeerGarage.getCarAt(location);
-                        Color color = car == null ? Color.white : car.getColor();
+                        if (car == null){
+                        Color color = Color.white;
                         drawPlace(graphics, location, color);
-                    }
-                }
+                        }
+                        else if (car != null && car.getClass().equals(AdHocCar.class)){
+                        Color color2 = Color.red;
+                        drawPlace(graphics, location, color2);
+                        }
+                        else if (car != null && car.getClass().equals(ParkingPassCar.class)){
+                        Color color3 = Color.blue;
+                        drawPlace(graphics, location, color3);
+                        }
+                   }
             }
             if (carParkImage == null) {
 				return;
 			}
 
 				Dimension currentSize = getSize();
-				System.out.println(currentSize);
 				if (size.equals(currentSize)) {
 					g.drawImage(carParkImage, 0, 0, null);
 				}
@@ -69,6 +77,7 @@ public class CarParkView extends AbstractView {
 					g.drawImage(carParkImage, 0, 0, 800, 500, null);
 			}
 		repaint();
+            }
         }
           
         

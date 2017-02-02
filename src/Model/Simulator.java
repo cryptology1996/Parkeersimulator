@@ -54,6 +54,7 @@ public class Simulator extends AbstractModel{
     public void run() {
         for (int i = 0; i < 10000; i++) {
             tick();
+            notifyViews();
         }
     }
 
@@ -99,7 +100,7 @@ public class Simulator extends AbstractModel{
         carsLeaving();
     }
     
-    private void updateViews(){
+    public void updateViews(){
     	parkeerGarage.tick();
         // Update the car park view.
         notifyViews();

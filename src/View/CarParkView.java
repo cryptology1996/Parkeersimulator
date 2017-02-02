@@ -2,6 +2,7 @@ package View;
 
 import java.awt.*;
 
+
 import Model.*;
 
 public class CarParkView extends AbstractView {
@@ -19,43 +20,44 @@ public class CarParkView extends AbstractView {
         public CarParkView(ParkeerGarage model) {
         	super(model);
         	size = new Dimension(0, 0);
-        	   updateViewer();
         }
         
-        public void updateViewer(){
-        	model.notifyViews();
-        }
+
     
         /**
          * Overridden. Tell the GUI manager how big we would like to be.
          */
         public Dimension getPreferredSize() {
-            return new Dimension(800, 500);
+            return new Dimension(1920, 1000);
         }
     
         /**
          * Overriden. The car park view component needs to be redisplayed. Copy the
          * internal image to screen.
          */
+       
+
+        @Override
         public void paintComponent(Graphics g) {
-        	super.paintComponent(g);
-            if (carParkImage == null) {
-                return;
-            }
-    
-            Dimension currentSize = getSize();
-            if (size.equals(currentSize)) {
-                g.drawImage(carParkImage, 0, 0, null);
-            }
-            else {
-                // Rescale the previous image.
-                g.drawImage(carParkImage, 0, 0, currentSize.width, currentSize.height, null);
-            }
+        		super.paintComponent(g);
+			if (carParkImage == null) {
+				return;
+			}
+
+				Dimension currentSize = getSize();
+				System.out.println(currentSize);
+				if (size.equals(currentSize)) {
+					g.drawImage(carParkImage, 0, 0, null);
+				}
+				else {
+        // Rescale the previous image.
+					g.drawImage(carParkImage, 0, 0, 800, 500, null);
+			}
         }
-    
-        public void updateView() {
-            // Create a new car park image if the size has changed.
-            if (!size.equals(getSize())) {
+
+		public void updateView() {   
+        	// Create a new car park image if the size has changed.
+          if (!size.equals(getSize())) {
                 size = getSize();
                 carParkImage = createImage(size.width, size.height);
                 

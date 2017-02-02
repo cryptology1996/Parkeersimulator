@@ -1,7 +1,8 @@
 package Model;
+
 //SimulatorView now ParkeerGarage
+
 public class ParkeerGarage extends AbstractModel{
-    //private CarParkView carParkView; // dit moet er uit worden gewerkt
     private int numberOfFloors;
     private int numberOfRows;
     private int numberOfPlaces;
@@ -14,13 +15,7 @@ public class ParkeerGarage extends AbstractModel{
         this.numberOfPlaces = numberOfPlaces;
         this.numberOfOpenSpots =numberOfFloors*numberOfRows*numberOfPlaces;
         cars = new Car[numberOfFloors][numberOfRows][numberOfPlaces];
-
         
-   // Wordt straks in main gedaan
-   //    Container contentPane = getContentPane();
-   //    contentPane.add(carParkView, BorderLayout.CENTER);
-   //     pack();
-   //     setVisible(true);
     }
     
 

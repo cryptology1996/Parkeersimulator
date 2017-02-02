@@ -4,15 +4,15 @@ import javax.swing.*;
 import Model.*;
 
 public abstract class AbstractView extends JPanel {
-	protected ParkeerGarage model;
+	protected ParkeerGarage simulator;
 
-	public AbstractView(ParkeerGarage model) {
-		this.model=model;
-		model.addView(this);
+	public AbstractView(ParkeerGarage simulator) {
+		this.simulator=simulator;
+		simulator.addView(this);
 	}
 	
 	public ParkeerGarage getModel() {
-		return model;
+		return simulator;
 	}
 	
 	public void updateView() {

@@ -13,6 +13,7 @@ public class Parkeersimulator
 	private AbstractView carParkView;
 	private Controller controller;
 	private ParkeerGarage parkeergarage;
+	private JFrame screen;
 	
 	public Parkeersimulator()
 	{
@@ -20,17 +21,18 @@ public class Parkeersimulator
 	    controller = new Controller(simulator);
 		parkeergarage = new ParkeerGarage(3, 6, 30);
 		carParkView  = new CarParkView(parkeergarage);
-		JFrame frame = new JFrame();
-		frame.setSize(1920, 1080);
-		frame.setResizable(false);
-		frame.setLayout(null);
-		frame.getContentPane().add(controller);
-		frame.getContentPane().add(carParkView);
-		controller.setBounds(0, 210, 450, 50);
-		carParkView.setBounds(230, 10, 200, 200);
+		screen = new JFrame("Parkeergarage Simulator");
+		screen.setSize(1920, 1080);
+		screen.setResizable(false);
+		screen.setLayout(null);
+		screen.getContentPane().add(controller);
+		screen.getContentPane().add(carParkView);
+		controller.setBounds(735, 900, 450, 50);
+		carParkView.setBounds(10, 10, 800, 500);
+		carParkView.setBorder(BorderFactory.createLineBorder(Color.black));
 		//frame.getContentPane().add(pieview);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.setVisible(true);
+		screen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		screen.setVisible(true);
 		
 	
 	}

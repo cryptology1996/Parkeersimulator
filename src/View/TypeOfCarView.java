@@ -28,7 +28,7 @@ public class TypeOfCarView extends AbstractView{
 		JPanel panel1 = new JPanel();
 		panel1.setBackground(Color.LIGHT_GRAY);
 		JLabel LadHoc = new JLabel("Percentage of adhoc car's :");
-		TadHoc = new JTextField("0     ");
+		TadHoc = new JTextField("0%     ");
 		TadHoc.setEditable(false);
 		TadHoc.setBackground(Color.RED);
 		TadHoc.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -41,7 +41,7 @@ public class TypeOfCarView extends AbstractView{
 		panel2.setLayout(new FlowLayout());
 		panel2.setBackground(Color.LIGHT_GRAY);
 		JLabel LpassHolder = new JLabel("Percentage of parking pass car's :");
-		TpassHolder = new JTextField("0    ");
+		TpassHolder = new JTextField("0%    ");
 		TpassHolder.setEditable(false);
 		TpassHolder.setBackground(Color.BLUE);
 		TpassHolder.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -54,7 +54,7 @@ public class TypeOfCarView extends AbstractView{
 		panel3.setLayout(new FlowLayout());
 		panel3.setBackground(Color.LIGHT_GRAY);
 		JLabel Lempty = new JLabel("Percentage of empty spots :");
-		Tempty = new JTextField("100");
+		Tempty = new JTextField("100%");
 		Tempty.setEditable(false);
 		Tempty.setBackground(Color.YELLOW);
 		Tempty.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -67,7 +67,7 @@ public class TypeOfCarView extends AbstractView{
 		panel4.setLayout(new FlowLayout());
 		panel4.setBackground(Color.LIGHT_GRAY);
 		JLabel LreservationSpot = new JLabel("Percentage of reservation spots :");
-		TreservationSpot = new JTextField("0");
+		TreservationSpot = new JTextField("0%");
 		TreservationSpot.setEditable(false);
 		TreservationSpot.setBackground(Color.BLACK);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -95,12 +95,10 @@ public class TypeOfCarView extends AbstractView{
 		String a = String.valueOf(AdHocCar);
 		String p = String.valueOf(PassParkCar);
 		String e = String.valueOf(AnotherEmpty);
-		System.out.println(a);
-		System.out.println(e);
-		System.out.println(p);
-		TadHoc.setText(a);
-		TpassHolder.setText(p);
-		Tempty.setText(e);
+
+		TadHoc.setText(a +"%");
+		TpassHolder.setText(p+"%");
+		Tempty.setText(e+"%");
 		
 		
 	}

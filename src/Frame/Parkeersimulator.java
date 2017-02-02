@@ -26,7 +26,7 @@ public class Parkeersimulator
 	    CarParkView  = new CarParkView(parkeergarage);
 	    textoverview = new TextOverview(simulator);
 	    PieView = new PieView(simulator);
-	    TypeOfCarView = new TypeOfCarView(parkeergarage);
+	    TypeOfCarView = new TypeOfCarView(simulator);
 		screen = new JFrame("Parkeergarage Simulator");
 		screen.setSize(1920, 1030);
 		screen.getRootPane().setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.DARK_GRAY));

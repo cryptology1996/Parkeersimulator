@@ -10,7 +10,7 @@ import View.*;
 public class Parkeersimulator
 { 
 	private Simulator simulator;
-	private AbstractView carParkView;
+	private AbstractView CarParkView;
 	private Controller controller;
 	private ParkeerGarage parkeergarage;
 	private JFrame screen;
@@ -19,17 +19,20 @@ public class Parkeersimulator
 	{
 		simulator  = new Simulator();
 	    controller = new Controller(simulator);
-		parkeergarage = new ParkeerGarage(3, 6, 30);
-		carParkView  = new CarParkView(parkeergarage);
+	    parkeergarage = new ParkeerGarage(3, 6, 30);
+	    CarParkView  = new CarParkView(parkeergarage);
 		screen = new JFrame("Parkeergarage Simulator");
-		screen.setSize(1920, 1080);
+		screen.setSize(1920, 1030);
+		screen.getRootPane().setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.DARK_GRAY));
 		screen.setResizable(false);
 		screen.setLayout(null);
 		screen.getContentPane().add(controller);
-		screen.getContentPane().add(carParkView);
-		controller.setBounds(735, 900, 450, 50);
-		carParkView.setBounds(10, 10, 800, 500);
-		carParkView.setBorder(BorderFactory.createLineBorder(Color.black));
+		screen.getContentPane().add(CarParkView);
+		controller.setBounds(735, 900, 500, 50);
+		CarParkView.setBounds(10, 10, 800, 500);
+		CarParkView.setBackground(Color.LIGHT_GRAY);
+		CarParkView.setBorder(BorderFactory.createLineBorder(Color.black));
+		controller.setBorder(BorderFactory.createLineBorder(Color.black));
 		//frame.getContentPane().add(pieview);
 		screen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		screen.setVisible(true);

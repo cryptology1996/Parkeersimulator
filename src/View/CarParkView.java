@@ -19,6 +19,7 @@ public class CarParkView extends AbstractView {
          */
         public CarParkView(ParkeerGarage model) {
         	super(model);
+        	this.parkeerGarage = model;
         	size = new Dimension(0, 0);
         }
         
@@ -35,27 +36,8 @@ public class CarParkView extends AbstractView {
          * Overriden. The car park view component needs to be redisplayed. Copy the
          * internal image to screen.
          */
-       
-
-        @Override
-        public void paintComponent(Graphics g) {
-        		super.paintComponent(g);
-			if (carParkImage == null) {
-				return;
-			}
-
-				Dimension currentSize = getSize();
-				System.out.println(currentSize);
-				if (size.equals(currentSize)) {
-					g.drawImage(carParkImage, 0, 0, null);
-				}
-				else {
-        // Rescale the previous image.
-					g.drawImage(carParkImage, 0, 0, 800, 500, null);
-			}
-        }
-
-		public void updateView() {   
+		public void paintComponent(Graphics g) { 
+			super.paintComponent(g);
         	// Create a new car park image if the size has changed.
           if (!size.equals(getSize())) {
                 size = getSize();
@@ -73,8 +55,23 @@ public class CarParkView extends AbstractView {
                     }
                 }
             }
-            repaint();  
+            if (carParkImage == null) {
+				return;
+			}
+
+				Dimension currentSize = getSize();
+				System.out.println(currentSize);
+				if (size.equals(currentSize)) {
+					g.drawImage(carParkImage, 0, 0, null);
+				}
+				else {
+        // Rescale the previous image.
+					g.drawImage(carParkImage, 0, 0, 800, 500, null);
+			}
+		repaint();
         }
+          
+        
     
         /**
          * Paint a place on this car park view in a given color.

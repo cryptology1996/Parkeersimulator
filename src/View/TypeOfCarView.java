@@ -69,7 +69,7 @@ public class TypeOfCarView extends AbstractView{
 		JLabel LreservationSpot = new JLabel("Percentage of reservation spots :");
 		TreservationSpot = new JTextField("0%");
 		TreservationSpot.setEditable(false);
-		TreservationSpot.setBackground(Color.BLACK);
+		TreservationSpot.setBackground(Color.green);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
 		panel4.add(LreservationSpot);
 		panel4.add(TreservationSpot);

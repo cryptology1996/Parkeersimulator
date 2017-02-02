@@ -8,6 +8,7 @@ import Model.*;
 public class CarParkView extends AbstractView {
         
 		private static int AdHocCar;
+		private static int ParkPassCar;
         private Dimension size;
         private Image carParkImage;   
         //private Simulator model;
@@ -46,6 +47,7 @@ public class CarParkView extends AbstractView {
                 
             }
           	AdHocCar = 0;
+          	ParkPassCar = 0;
             Graphics graphics = carParkImage.getGraphics();
             for(int floor = 0; floor < parkeerGarage.getNumberOfFloors(); floor++) {
                 for(int row = 0; row < parkeerGarage.getNumberOfRows(); row++) {
@@ -64,6 +66,7 @@ public class CarParkView extends AbstractView {
                         else if (car != null && car.getClass().equals(ParkingPassCar.class)){
                         Color color3 = Color.blue;
                         drawPlace(graphics, location, color3);
+                        ParkPassCar++;
                         }
                    }
             }
@@ -99,7 +102,9 @@ public class CarParkView extends AbstractView {
                     10 - 1); // TODO use dynamic size or constants
         }
         public static int GetAdHoc(){
-        	System.out.println(AdHocCar);
         	return AdHocCar;
+        }
+        public static int GetParkPass(){
+        	return ParkPassCar;
         }
     }

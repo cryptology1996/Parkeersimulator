@@ -37,9 +37,10 @@ public class Parkeersimulator
 		controller.setBounds(735, 900, 500, 50);
 		CarParkView.setBounds(10, 10, 875, 445);
 		textoverview.setBounds(400, 600, 300, 90);
-		PieView.setBounds(800, 800, 300, 300);
+		PieView.setBounds(1200, 500, 300, 300);
 		PieView.setBackground(Color.LIGHT_GRAY);
 		CarParkView.setBackground(Color.LIGHT_GRAY);
+		PieView.setBorder(BorderFactory.createLineBorder(Color.black));
 		CarParkView.setBorder(BorderFactory.createLineBorder(Color.black));
 		controller.setBorder(BorderFactory.createLineBorder(Color.black));
 		//frame.getContentPane().add(pieview);

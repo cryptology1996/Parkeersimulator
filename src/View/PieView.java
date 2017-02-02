@@ -10,7 +10,7 @@ public class PieView extends AbstractView {
     private int aantalAdHoc;
     private int aantalPassCar;
     private int aantalReserved;
-    private Simulator simulator;
+    private int aantalEmpty;
 
     public PieView(Simulator simulator) {
     	super(simulator); 
@@ -20,14 +20,16 @@ public class PieView extends AbstractView {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         aantalAdHoc = CarParkView.GetAdHoc();
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, 200, 200);
+        aantalPassCar = CarParkView.GetParkPass();
+        aantalEmpty = 500 - aantalPassCar - aantalAdHoc;
+        aantalReserved = aantalPassCar + aantalAdHoc;
+        
         g.setColor(Color.red);
-        g.fillArc(10, 10, 180, 180, 0, aantalAdHoc);
+        g.fillArc(10, 10, 250, 250, 0, aantalAdHoc);
         g.setColor(Color.blue);
-        g.fillArc(10, 10, 180, 180, aantalAdHoc, aantalPassCar);
-        g.setColor(Color.black);
-        g.fillArc(10, 10, 180, 180, aantalAdHoc+aantalPassCar, aantalReserved);
+        g.fillArc(10, 10, 250, 250, aantalAdHoc, aantalPassCar);
+        g.setColor(Color.yellow);
+        g.fillArc(10, 10, 250, 250, aantalReserved, aantalEmpty);
     }   
     
 }

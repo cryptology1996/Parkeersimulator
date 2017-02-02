@@ -17,6 +17,10 @@ public class Simulator extends AbstractModel{
     //private SimulatorView simulatorView;
     private ParkeerGarage parkeerGarage;
     private CarParkView carParkView;
+    private TextOverview textoverview;
+    private int PayingCars;
+    double totalRevenue;
+    double ticketPrice = 7.50;
     private  boolean run = true;
     private int day = 0;
     private int hour = 0;
@@ -143,14 +147,32 @@ public class Simulator extends AbstractModel{
 
     private void carsPaying(){
         // Let cars pay.
-    	int i=0;
-    	while (paymentCarQueue.carsInQueue()>0 && i < paymentSpeed){
+    	for (int i = 0; i < paymentSpeed; i++) {
             Car car = paymentCarQueue.removeCar();
-            // TODO Handle payment.
-            carLeavesSpot(car);
-            i++;
+            if (car != null){
+            	
+            	PayingCars++;
+            
+            }
+            if (car == null) {
+                break;
+            }
+            parkeerGarage.removeCarAt(car.getLocation());
+            exitCarQueue.addCar(car);
+   //         textoverview.updateView();
+    	
     	}
     }
+    
+    /*
+     * returns the amount of cars that will pay 
+     * @return PayingCars
+     */
+    public int getPayingCars() {
+    	return PayingCars;
+    }
+
+	
     
     private void carsLeaving(){
         // Let cars leave.
@@ -174,6 +196,7 @@ public class Simulator extends AbstractModel{
         double numberOfCarsPerHour = averageNumberOfCarsPerHour + random.nextGaussian() * standardDeviation;
         return (int)Math.round(numberOfCarsPerHour / 60);	
     }
+
     
     private void addArrivingCars(int numberOfCars, String type){
         // Add the cars to the back of the queue.

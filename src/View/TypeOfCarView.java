@@ -14,7 +14,7 @@ import Model.Simulator;
 public class TypeOfCarView extends AbstractView{
 	private JTextField TadHoc;
 	private JTextField TpassHolder;
-	private JTextField Treservation;
+	private JTextField Tempty;
 	private JTextField TreservationSpot;
 	
 	
@@ -28,7 +28,7 @@ public class TypeOfCarView extends AbstractView{
 		JPanel panel1 = new JPanel();
 		panel1.setBackground(Color.LIGHT_GRAY);
 		JLabel LadHoc = new JLabel("Percentage of adhoc car's :");
-		TadHoc = new JTextField("0.0");
+		TadHoc = new JTextField("0     ");
 		TadHoc.setEditable(false);
 		TadHoc.setBackground(Color.RED);
 		TadHoc.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -41,7 +41,7 @@ public class TypeOfCarView extends AbstractView{
 		panel2.setLayout(new FlowLayout());
 		panel2.setBackground(Color.LIGHT_GRAY);
 		JLabel LpassHolder = new JLabel("Percentage of parking pass car's :");
-		TpassHolder = new JTextField("0.0");
+		TpassHolder = new JTextField("0    ");
 		TpassHolder.setEditable(false);
 		TpassHolder.setBackground(Color.BLUE);
 		TpassHolder.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -53,13 +53,13 @@ public class TypeOfCarView extends AbstractView{
 		JPanel panel3 = new JPanel();
 		panel3.setLayout(new FlowLayout());
 		panel3.setBackground(Color.LIGHT_GRAY);
-		JLabel Lreservation = new JLabel("Percentage of empty spots :");
-		Treservation = new JTextField(" "+  100);
-		Treservation.setEditable(false);
-		Treservation.setBackground(Color.YELLOW);
-		Treservation.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
-		panel3.add(Lreservation);
-		panel3.add(Treservation);
+		JLabel Lempty = new JLabel("Percentage of empty spots :");
+		Tempty = new JTextField("100");
+		Tempty.setEditable(false);
+		Tempty.setBackground(Color.YELLOW);
+		Tempty.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
+		panel3.add(Lempty);
+		panel3.add(Tempty);
 		this.add(panel3);
 		
 		
@@ -67,7 +67,7 @@ public class TypeOfCarView extends AbstractView{
 		panel4.setLayout(new FlowLayout());
 		panel4.setBackground(Color.LIGHT_GRAY);
 		JLabel LreservationSpot = new JLabel("Percentage of reservation spots :");
-		TreservationSpot = new JTextField(" "+  100);
+		TreservationSpot = new JTextField("0");
 		TreservationSpot.setEditable(false);
 		TreservationSpot.setBackground(Color.BLACK);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
@@ -83,17 +83,25 @@ public class TypeOfCarView extends AbstractView{
 	
 	public void calculatePercentage()
 	{
+		double garageSize = 540;
 		double AdHoc = CarParkView.GetAdHoc();
 		double PassCar = CarParkView.GetParkPass();
 		int AdHocCar;
 		int PassParkCar;
-		double garageSize = 540;
+		int EmptySpots = (int) ((int) 540 - AdHoc - PassCar);
+		int AnotherEmpty = (int) (((100 / garageSize) * EmptySpots));
 		AdHocCar = (int) (((100 / garageSize) * AdHoc));
 		PassParkCar = (int) (((100 / garageSize) * PassCar));
 		String a = String.valueOf(AdHocCar);
 		String p = String.valueOf(PassParkCar);
+		String e = String.valueOf(AnotherEmpty);
+		System.out.println(a);
+		System.out.println(e);
+		System.out.println(p);
 		TadHoc.setText(a);
 		TpassHolder.setText(p);
+		Tempty.setText(e);
+		
 		
 	}
 }

@@ -19,7 +19,6 @@ public class TextOverview extends AbstractView {
 	private JTextField txtRevenue;
 	private JTextField txtExpRevenue;
 	private Simulator simulator;
-
 	double ticketPrice = 7.50;
 	
 	

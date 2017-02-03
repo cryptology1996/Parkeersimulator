@@ -24,14 +24,14 @@ public class Simulator extends AbstractModel{
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
-    private int tickPause = 200;
+    private int tickPause = 250;
 
-    int weekDayArrivals= 100; // average number of arriving cars per hour
-    int weekendArrivals = 200; // average number of arriving cars per hour
-    int weekDayPassArrivals= 50; // average number of arriving cars per hour
-    int weekendPassArrivals = 5; // average number of arriving cars per hour
-    int weekDayReservArrivals= 50;
-    int weekendReservArrivals=5;
+    int weekDayArrivals= 55; // average number of arriving cars per hour
+    int weekendArrivals = 100; // average number of arriving cars per hour
+    int weekDayPassArrivals= 20; // average number of arriving cars per hour
+    int weekendPassArrivals = 10; // average number of arriving cars per hour
+    int weekDayReservArrivals= 25;
+    int weekendReservArrivals=10;
 
     int enterSpeed = 3; // number of cars that can enter per minute
     int paymentSpeed = 7; // number of cars that can pay per minute

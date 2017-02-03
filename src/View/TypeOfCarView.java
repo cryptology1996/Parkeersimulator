@@ -115,7 +115,7 @@ public class TypeOfCarView extends AbstractView{
 		int ReservedSpots;
 		int ReservationCars;
 		
-		int EmptySpots = (int) ((int) 540 - AdHoc - PassCar);
+		int EmptySpots = (int) ((int) 540 - AdHoc - PassCar - ReservedSpot - ReservationCar);
 		int Empty = (int) (((100 / garageSize) * EmptySpots));
 		
 		

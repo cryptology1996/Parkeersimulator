@@ -35,7 +35,8 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the AdHoc Cars
 		 */
 		JLabel LadHoc = new JLabel("Percentage of Adhoc Cars :");
-		TadHoc = new JTextField("   0%    ", Font.BOLD);
+		TadHoc = new JTextField("   0%   ", Font.BOLD);
+		TadHoc.setColumns(3);
 		TadHoc.setEditable(false);
 		TadHoc.setBackground(Color.RED);
 		TadHoc.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -47,6 +48,7 @@ public class TypeOfCarView extends AbstractView{
 		 */
 		JLabel LpassHolder = new JLabel("Percentage of Parking Pass Cars :");
 		TpassHolder = new JTextField("   0%   ", Font.BOLD);
+		TpassHolder.setColumns(3);
 		TpassHolder.setEditable(false);
 		TpassHolder.setBackground(Color.BLUE);
 		TpassHolder.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -58,6 +60,7 @@ public class TypeOfCarView extends AbstractView{
 		 */
 		JLabel LreservationSpot = new JLabel("Percentage of Reservation Spots :");
 		TreservationSpot = new JTextField("   0%   ", Font.BOLD);
+		TreservationSpot.setColumns(3);
 		TreservationSpot.setEditable(false);
 		TreservationSpot.setBackground(Color.yellow);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -69,6 +72,7 @@ public class TypeOfCarView extends AbstractView{
 		 */
 		JLabel LreservationCar = new JLabel("Percentage of Reservation Cars :");
 		TreservationCar = new JTextField("   0%   ", Font.BOLD);
+		TreservationCar.setColumns(3);
 		TreservationCar.setEditable(false);
 		TreservationCar.setBackground(Color.green);
 		TreservationCar.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -80,7 +84,8 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the Empty Spots in the garage
 		 */		
 		JLabel Lempty = new JLabel("Percentage of Empty Spots :");
-		Tempty = new JTextField("   100%  ", Font.BOLD);
+		Tempty = new JTextField("  100%  ", Font.BOLD);
+		Tempty.setColumns(4);
 		Tempty.setEditable(false);
 		Tempty.setBackground(Color.white);
 		Tempty.setBorder(BorderFactory.createLineBorder(Color.black,1));

@@ -8,6 +8,7 @@ public abstract class Car {
     private int minutesLeft;
     private boolean isPaying;
     private boolean hasToPay;
+    private int ArrivalTime;
 
     /**
      * Constructor for objects of class Car
@@ -15,6 +16,27 @@ public abstract class Car {
     public Car() {
 
     }
+    
+    public int setArrivalTime(int time){
+    	return time;
+    }
+    
+	/**
+	 * returns the amount of time until the car arrives
+	 * @return arrivalTime
+	 */
+	public int getArrivalTime(){
+		return ArrivalTime;
+	}
+	
+	/**
+	 * subtracts 1 minute per tick of the amount of time until arrival
+	 */	
+	public void removeArrivalTime(){
+		if (ArrivalTime != 0){
+			ArrivalTime--;
+		}
+	}
 
     public Location getLocation() {
         return location;

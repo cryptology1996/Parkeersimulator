@@ -24,7 +24,7 @@ public class Simulator extends AbstractModel{
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
-    private int tickPause = 100;
+    private int tickPause = 200;
 
     int weekDayArrivals= 100; // average number of arriving cars per hour
     int weekendArrivals = 200; // average number of arriving cars per hour

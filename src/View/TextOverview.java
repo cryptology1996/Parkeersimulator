@@ -73,7 +73,7 @@ public class TextOverview extends AbstractView {
 
 		// using the calc function to calc the revenue
 		calcRevenue();
-		// calcExpRevenue();
+		 calcExpRevenue();
 
 	}
 	
@@ -83,7 +83,7 @@ public class TextOverview extends AbstractView {
 	
 	public void updateView(){
 		calcRevenue();
-	//	calcExpRevenue();
+		calcExpRevenue();
 
 	}	
 	
@@ -101,14 +101,14 @@ public class TextOverview extends AbstractView {
 	/**
 	 * Calculates the expected Revenue of cars which still have to pay.
 	 */
-	// public void calcExpRevenue(){
+	 public void calcExpRevenue(){
 		
-	// int totalCarsLeft =  simulator.getAdHoc()+simulator.getSubCar();
+	 int totalCarsLeft =  CarParkView.GetReservationCar()+CarParkView.GetAdHoc();
 	
-//	double totalExpRevenue = totalCarsLeft * ticketPrice;
+	double totalExpRevenue = totalCarsLeft * ticketPrice;
 	
-	//	txtExpRevenue.setText(" "+totalExpRevenue+"$");	
-	//}
+		txtExpRevenue.setText(" "+totalExpRevenue+"$");	
+	}
 	
 
 	

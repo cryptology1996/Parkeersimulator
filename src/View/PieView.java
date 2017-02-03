@@ -36,7 +36,8 @@ public class PieView extends AbstractView {
         aantalReservedSpot = CarParkView.GetReservedSpot();
         aantalReservationCar = CarParkView.GetReservationCar();
         aantalEmpty = 540 - aantalPassCar - aantalAdHoc - aantalReservedSpot - aantalReservationCar;
-  
+        System.out.println("AdHOc:" + aantalAdHoc + " PassCar:" + aantalPassCar + " ReservedSpt: " + aantalReservedSpot +
+				" Reserved Car: " + aantalReservationCar + " Empty: " + aantalEmpty);
         //System.out.println(aantalAdHoc + ": " + calculateDegrees(270));
   
         g.setColor(Color.red);

@@ -48,7 +48,7 @@ public Controller(Simulator simulator) {
         een.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
         add(een, l1);
         
-        honderd= new JButton("Hundred Step");
+        honderd= new JButton("Hundred Steps");
         honderd.addActionListener((ActionListener) this);
         GridBagConstraints l2 = new GridBagConstraints();
 		l2.fill = GridBagConstraints.HORIZONTAL;
@@ -122,7 +122,7 @@ public void actionPerformed(ActionEvent e)
 			if (command == "One Step"){
 				simulator.runCommand(1);
 			} 
-			if (command == "Hundred Step"){
+			if (command == "Hundred Steps"){
 				simulator.runCommand(100);
 				}
 			if (command == "Start"){

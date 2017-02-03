@@ -25,12 +25,12 @@ public class Simulator extends AbstractModel{
     private int minute = 0;
     private int tickPause = 250;
 
-    int weekDayArrivals= 60; // average number of arriving cars per hour
+    int weekDayArrivals = 60; // average number of arriving cars per hour
     int weekendArrivals = 100; // average number of arriving cars per hour
-    int weekDayPassArrivals= 25; // average number of arriving cars per hour
+    int weekDayPassArrivals = 25; // average number of arriving cars per hour
     int weekendPassArrivals = 10; // average number of arriving cars per hour
     int weekDayReservArrivals= 25;
-    int weekendReservArrivals=10;
+    int weekendReservArrivals = 10;
 
     int enterSpeed = 3; // number of cars that can enter per minute
     int paymentSpeed = 7; // number of cars that can pay per minute
@@ -243,4 +243,21 @@ public class Simulator extends AbstractModel{
     public void ChangeWeekAH(int getal){
 		  this.weekDayArrivals = getal;
 	  }
+    public void ChangeWeekendAH(int getal){
+		  this.weekendArrivals  = getal;
+	  }
+  public void ChangeWeekP(int getal){
+		  this.weekDayPassArrivals = getal;
+	  }
+  public void ChangeWeekendP(int getal){
+		  this.weekendPassArrivals = getal;
+	  }
+  public void ChangeWeekRes(int getal){
+		  this.weekDayReservArrivals = getal;
+	  }
+  public void ChangeWeekendRes(int getal){
+	  this.weekendReservArrivals = getal;
+  }
 }
+    
+

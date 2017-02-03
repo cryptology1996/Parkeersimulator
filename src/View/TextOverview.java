@@ -56,7 +56,7 @@ public class TextOverview extends AbstractView {
 		/*
 		 * Expected revenue JTextField en JLabel
 		 */
-		JLabel expRevL = new JLabel("Expected Revenue");
+		JLabel expRevL = new JLabel("Expected Revenue of remaining cars");
 		txtExpRevenue = new JTextField();
 		txtExpRevenue.setEditable(false);
 		txtExpRevenue.setColumns(10);
@@ -73,7 +73,7 @@ public class TextOverview extends AbstractView {
 
 		// using the calc function to calc the revenue
 		calcRevenue();
-		 calcExpRevenue();
+		calcExpRevenue();
 
 	}
 	
@@ -109,7 +109,4 @@ public class TextOverview extends AbstractView {
 	
 		txtExpRevenue.setText(" "+totalExpRevenue+"$");	
 	}
-	
-
-	
 }

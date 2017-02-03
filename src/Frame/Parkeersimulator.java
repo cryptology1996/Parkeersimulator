@@ -43,7 +43,7 @@ public class Parkeersimulator
 		
 		controller.setBounds(400, 775, 800, 75);
 		CarParkView.setBounds(362, 10, 875, 445);
-		textoverview.setBounds(650, 510, 300, 90);
+		textoverview.setBounds(550, 510, 600, 90);
 		PieView.setBounds(1200, 480, 272, 272);
 		TypeOfCarView.setBounds(650, 600, 300, 120);
 		

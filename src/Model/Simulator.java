@@ -164,7 +164,7 @@ public class Simulator extends AbstractModel{
             }
             parkeerGarage.removeCarAt(car.getLocation());
             exitCarQueue.addCar(car);
-   //         textoverview.updateView();
+
     	
     	}
     }

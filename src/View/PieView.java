@@ -43,24 +43,25 @@ public class PieView extends AbstractView {
         g.setColor(Color.red);
         g.fillArc(10, 10, 250, 250, 0, calculateDegrees(aantalAdHoc));
         g.setColor(Color.blue);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc), 
-        							calculateDegrees(aantalPassCar));
-        g.setColor(Color.white);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
-        							calculateDegrees(aantalPassCar), 
-        							calculateDegrees(aantalEmpty));
-        
+        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc), calculateDegrees(aantalPassCar));
+       
         g.setColor(Color.YELLOW);
         g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
-        							calculateDegrees(aantalPassCar) +
-        							calculateDegrees(aantalEmpty), 
-        							calculateDegrees(aantalReservedSpot));
+        							calculateDegrees(aantalPassCar), calculateDegrees(aantalReservedSpot));
         
         g.setColor(Color.green);
         g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
-        							calculateDegrees(aantalPassCar) +
-        							calculateDegrees(aantalEmpty) + 
+        							calculateDegrees(aantalPassCar) + 
         							calculateDegrees(aantalReservedSpot), calculateDegrees(aantalReservationCar));
+      
+    
+        g.setColor(Color.white);
+        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        							calculateDegrees(aantalPassCar) +
+        							calculateDegrees(aantalReservedSpot) +
+        							calculateDegrees(aantalReservationCar), calculateDegrees(aantalEmpty));
+        
+     
     }   
     
 }

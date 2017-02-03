@@ -215,7 +215,7 @@ public class Simulator extends AbstractModel{
             break;
     	case RESERV_CAR:
     		for (int i = 0; i < numberOfCars; i++) {
-    			entranceCarQueue.addCar(new ReservationCar(3));
+    			entranceCarQueue.addCar(new ReservationCar());
     		}
     		break;
     	}

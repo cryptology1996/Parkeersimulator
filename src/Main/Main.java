@@ -40,7 +40,7 @@ public class Main {
 			CarParkView.setBounds(5, 10, 875, 445);
 			textoverview.setBounds(150, 450, 600, 40);
 			PieView.setBounds(610, 490, 272, 272);
-			TypeOfCarView.setBounds(300, 575, 300, 120);
+			TypeOfCarView.setBounds(300, 600, 300, 130);
 			
 			
 			PieView.setBackground(Color.LIGHT_GRAY);

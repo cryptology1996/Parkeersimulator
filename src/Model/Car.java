@@ -18,7 +18,8 @@ public abstract class Car {
     }
     
     public int setArrivalTime(int time){
-    	return time;
+    	ArrivalTime = time;
+    	return ArrivalTime;
     }
     
 	/**
@@ -72,6 +73,9 @@ public abstract class Car {
 
     public void tick() {
         minutesLeft--;
+		if (ArrivalTime != 0){
+			ArrivalTime--;
+		}
     }
     
     public abstract Color getColor();

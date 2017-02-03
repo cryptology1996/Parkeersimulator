@@ -73,6 +73,7 @@ public class Simulator extends AbstractModel{
             e.printStackTrace();
         }
     	handleEntrance();
+    	
     }
 
     private void advanceTime(){
@@ -93,6 +94,7 @@ public class Simulator extends AbstractModel{
     }
 
     private void handleEntrance(){
+    	
     	carsArriving();
     	carsEntering(entrancePassQueue);
     	carsEntering(entranceCarQueue);  	
@@ -109,6 +111,7 @@ public class Simulator extends AbstractModel{
         // Update the car park view.
         notifyViews();
     }
+
     
     private void carsArriving(){
     	int numberOfCars=getNumberOfCars(weekDayArrivals, weekendArrivals);

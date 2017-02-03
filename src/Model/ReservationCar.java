@@ -1,6 +1,7 @@
 package Model;
 
 import java.awt.Color;
+import java.util.Random;
 
 /**
  * Class Which contains a car which has made a reservation
@@ -14,6 +15,13 @@ public class ReservationCar extends Car {
 	 * Constructs an instance of ReservationCar, and sets the time that is left until the car arrives
 	 */
 	public ReservationCar(){
+		Random random = new Random();
+		int arrivaltime = (int) (random.nextFloat() * 3 * 60);
+		int stayminutes = (int) (15 + random.nextFloat() * 3 * 60) + arrivaltime;
+		this.setMinutesLeft(stayminutes);
+		this.setArrivalTime(arrivaltime);
+		this.setHasToPay(true);
+		
 		
 	}
 

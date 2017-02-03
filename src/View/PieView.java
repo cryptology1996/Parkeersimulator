@@ -9,7 +9,8 @@ import Model.*;
 public class PieView extends AbstractView {
     private int aantalAdHoc;
     private int aantalPassCar;
-    private int aantalReserved;
+    private int aantalReservedSpot;
+    private int aantalReservationCar;
     private int aantalEmpty;
 
     public PieView(Simulator simulator) {
@@ -32,6 +33,8 @@ public class PieView extends AbstractView {
         super.paintComponent(g);
         aantalAdHoc = CarParkView.GetAdHoc();
         aantalPassCar = CarParkView.GetParkPass();
+        aantalReservedSpot = CarParkView.GetReservedSpot();
+        aantalReservationCar = CarParkView.GetReservationCar();
         aantalEmpty = 540 - aantalPassCar - aantalAdHoc;
   
         //System.out.println(aantalAdHoc + ": " + calculateDegrees(270));
@@ -42,8 +45,21 @@ public class PieView extends AbstractView {
         g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc), 
         							calculateDegrees(aantalPassCar));
         g.setColor(Color.white);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + calculateDegrees(aantalPassCar), 
+        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        							calculateDegrees(aantalPassCar), 
         							calculateDegrees(aantalEmpty));
+        
+        g.setColor(Color.YELLOW);
+        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        							calculateDegrees(aantalPassCar) +
+        							calculateDegrees(aantalEmpty), 
+        							calculateDegrees(aantalReservedSpot));
+        
+        g.setColor(Color.green);
+        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        							calculateDegrees(aantalPassCar) +
+        							calculateDegrees(aantalEmpty) + 
+        							calculateDegrees(aantalReservedSpot), calculateDegrees(aantalReservationCar));
     }   
     
 }

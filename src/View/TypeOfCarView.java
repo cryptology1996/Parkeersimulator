@@ -54,7 +54,7 @@ public class TypeOfCarView extends AbstractView{
 		TpassHolder.setFont(bigFont2);
 		TpassHolder.setColumns(3);
 		TpassHolder.setEditable(false);
-		TpassHolder.setBackground(Color.BLUE);
+		TpassHolder.setBackground(Color.CYAN);
 		TpassHolder.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		panel1.add(LpassHolder);
 		panel1.add(TpassHolder);

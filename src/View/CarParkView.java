@@ -65,7 +65,7 @@ public class CarParkView extends AbstractView {
                         	AdHocCar++;
                         }
                         else if (car != null && car.getClass().equals(ParkingPassCar.class)){
-                        	Color color2 = Color.blue;
+                        	Color color2 = Color.cyan;
                         	drawPlace(graphics, location, color2);
                         	ParkPassCar++;
                         }

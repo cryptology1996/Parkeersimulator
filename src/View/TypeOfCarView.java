@@ -17,16 +17,22 @@ public class TypeOfCarView extends AbstractView{
 	private JTextField Tempty;
 	private JTextField TreservationSpot;
 	
-	
-		
+	/*
+	 * Constructor of TypeOfCarView
+	 */
 	public TypeOfCarView(Simulator model) {
 		super(model);
     	
-    	
-    	   	
+    	/*
+    	 * Create a JPanel for all the Textfields and Labels
+    	 */
 		this.setLayout(new GridLayout(0,1));
 		JPanel panel1 = new JPanel();
 		panel1.setBackground(Color.LIGHT_GRAY);
+		
+		/*
+		 * Create a JTextField and JLabel for the AdHoc Cars
+		 */
 		JLabel LadHoc = new JLabel("Percentage of adhoc car's :");
 		TadHoc = new JTextField("0%     ");
 		TadHoc.setEditable(false);
@@ -34,53 +40,57 @@ public class TypeOfCarView extends AbstractView{
 		TadHoc.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
 		panel1.add(LadHoc);
 		panel1.add(TadHoc);
-		this.add(panel1);
 		
-		
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(new FlowLayout());
-		panel2.setBackground(Color.LIGHT_GRAY);
+		/*
+		 * Create a JTextField and JLabel for the ParkingPass Cars
+		 */
 		JLabel LpassHolder = new JLabel("Percentage of parking pass car's :");
 		TpassHolder = new JTextField("0%    ");
 		TpassHolder.setEditable(false);
 		TpassHolder.setBackground(Color.BLUE);
 		TpassHolder.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
-		panel2.add(LpassHolder);
-		panel2.add(TpassHolder);
-		this.add(panel2);
+		panel1.add(LpassHolder);
+		panel1.add(TpassHolder);
 		
-		
-		JPanel panel3 = new JPanel();
-		panel3.setLayout(new FlowLayout());
-		panel3.setBackground(Color.LIGHT_GRAY);
+		/*
+		 * Create a JTextField and JLabel for the Empty Spots in the garage
+		 */		
 		JLabel Lempty = new JLabel("Percentage of empty spots :");
-		Tempty = new JTextField("100%");
+		Tempty = new JTextField("100%   ");
 		Tempty.setEditable(false);
-		Tempty.setBackground(Color.YELLOW);
+		Tempty.setBackground(Color.white);
 		Tempty.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
-		panel3.add(Lempty);
-		panel3.add(Tempty);
-		this.add(panel3);
+		panel1.add(Lempty);
+		panel1.add(Tempty);
 		
-		
-		JPanel panel4 = new JPanel();
-		panel4.setLayout(new FlowLayout());
-		panel4.setBackground(Color.LIGHT_GRAY);
+		/*
+		 * Create a JTextField and JLabel for the Reservation spots in the garage.
+		 */
 		JLabel LreservationSpot = new JLabel("Percentage of reservation spots :");
-		TreservationSpot = new JTextField("0%");
+		TreservationSpot = new JTextField("0%   ");
 		TreservationSpot.setEditable(false);
 		TreservationSpot.setBackground(Color.green);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
-		panel4.add(LreservationSpot);
-		panel4.add(TreservationSpot);
-		this.add(panel4);
+		panel1.add(LreservationSpot);
+		panel1.add(TreservationSpot);
+		
+		/* 
+		 * Add everything to the JPanel 
+		 */
+		this.add(panel1);
 		
 	}
 	
+	/*
+	 * Method updateView for updating the view each time something changes
+	 */
 	public void updateView() {
 		calculatePercentage();		
 	}
 	
+	/*
+	 * Method calculatePercentage, calculates the percentages.
+	 */
 	public void calculatePercentage()
 	{
 		double garageSize = 540;

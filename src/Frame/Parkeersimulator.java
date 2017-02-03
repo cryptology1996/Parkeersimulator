@@ -45,7 +45,7 @@ public class Parkeersimulator
 		CarParkView.setBounds(362, 10, 875, 445);
 		textoverview.setBounds(650, 510, 300, 90);
 		PieView.setBounds(1200, 480, 272, 272);
-		TypeOfCarView.setBounds(650, 600, 300, 90);
+		TypeOfCarView.setBounds(650, 600, 300, 100);
 		
 		
 		PieView.setBackground(Color.LIGHT_GRAY);

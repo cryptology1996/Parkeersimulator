@@ -35,10 +35,10 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the AdHoc Cars
 		 */
 		JLabel LadHoc = new JLabel("Percentage of Adhoc Cars :");
-		TadHoc = new JTextField("   0%   ");
+		TadHoc = new JTextField("   0%  ");
 		Font bigFont = TadHoc.getFont().deriveFont(Font.BOLD, 13f);
 		TadHoc.setFont(bigFont);
-		TadHoc.setColumns(3);
+		TadHoc.setColumns(4);
 		TadHoc.setEditable(false);
 		TadHoc.setBackground(Color.RED);
 		TadHoc.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -49,10 +49,10 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the ParkingPass Cars
 		 */
 		JLabel LpassHolder = new JLabel("Percentage of Parking Pass Cars :");
-		TpassHolder = new JTextField("   0%   ");
+		TpassHolder = new JTextField("   0%  ");
 		Font bigFont2 = TpassHolder.getFont().deriveFont(Font.BOLD, 13f);
 		TpassHolder.setFont(bigFont2);
-		TpassHolder.setColumns(3);
+		TpassHolder.setColumns(4);
 		TpassHolder.setEditable(false);
 		TpassHolder.setBackground(Color.ORANGE);
 		TpassHolder.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -63,10 +63,10 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the Reservation spots in the garage.
 		 */
 		JLabel LreservationSpot = new JLabel("Percentage of Reservation Spots :");
-		TreservationSpot = new JTextField("   0%   ");
+		TreservationSpot = new JTextField("   0%  ");
 		Font bigFont3 = TreservationSpot.getFont().deriveFont(Font.BOLD, 13f);
 		TreservationSpot.setFont(bigFont3);
-		TreservationSpot.setColumns(3);
+		TreservationSpot.setColumns(4);
 		TreservationSpot.setEditable(false);
 		TreservationSpot.setBackground(Color.MAGENTA);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -77,10 +77,10 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the Reservation Cars in the garage.
 		 */
 		JLabel LreservationCar = new JLabel("Percentage of Reservation Cars :");
-		TreservationCar = new JTextField("   0%   ");
+		TreservationCar = new JTextField("   0%  ");
 		Font bigFont4 = TreservationCar.getFont().deriveFont(Font.BOLD, 13f);
 		TreservationCar.setFont(bigFont4);
-		TreservationCar.setColumns(3);
+		TreservationCar.setColumns(4);
 		TreservationCar.setEditable(false);
 		TreservationCar.setBackground(Color.green);
 		TreservationCar.setBorder(BorderFactory.createLineBorder(Color.black,1));

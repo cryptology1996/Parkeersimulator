@@ -9,13 +9,13 @@ public class CarParkView extends AbstractView {
         
 		private static int AdHocCar;
 		private static int ParkPassCar;
+		private static int ReservationCar;
+		private static int ReservedSpot;
+		
         private Dimension size;
         private Image carParkImage;   
-        //private Simulator model;
-        //added
         private ParkeerGarage parkeerGarage;
-        //ParkeerGarage = new ParkeerGarage(); 
-    
+            
         /**
          * Constructor for objects of class CarPark
          */
@@ -24,9 +24,7 @@ public class CarParkView extends AbstractView {
         	this.parkeerGarage = model;
         	size = new Dimension(0, 0);
         }
-        
-
-    
+            
         /**
          * Overridden. Tell the GUI manager how big we would like to be.
          */
@@ -41,13 +39,16 @@ public class CarParkView extends AbstractView {
 		public void paintComponent(Graphics g) { 
 			super.paintComponent(g);
         	// Create a new car park image if the size has changed.
-          if (!size.equals(getSize())) {
+			if (!size.equals(getSize())) {
                 size = getSize();
                 carParkImage = createImage(size.width, size.height);
                 
             }
           	AdHocCar = 0;
           	ParkPassCar = 0;
+          	ReservationCar = 0;
+          	ReservedSpot = 0;
+          	
             Graphics graphics = carParkImage.getGraphics();
             for(int floor = 0; floor < parkeerGarage.getNumberOfFloors(); floor++) {
                 for(int row = 0; row < parkeerGarage.getNumberOfRows(); row++) {
@@ -59,14 +60,26 @@ public class CarParkView extends AbstractView {
                         drawPlace(graphics, location, color);
                         }
                         else if (car != null && car.getClass().equals(AdHocCar.class)){
-                        Color color2 = Color.red;
-                        drawPlace(graphics, location, color2);
-                        AdHocCar++;
+                        	Color color1 = Color.red;
+                        	drawPlace(graphics, location, color1);
+                        	AdHocCar++;
                         }
                         else if (car != null && car.getClass().equals(ParkingPassCar.class)){
-                        Color color3 = Color.blue;
-                        drawPlace(graphics, location, color3);
-                        ParkPassCar++;
+                        	Color color2 = Color.blue;
+                        	drawPlace(graphics, location, color2);
+                        	ParkPassCar++;
+                        }
+                        else if (car != null && car.getClass().equals(ReservationCar.class)){
+                        	//if (car.getArrivalTime != 0) {
+                        	Color color3 = Color.yellow;
+                        	drawPlace(graphics, location, color3);
+                        	ReservedSpot++;
+                        }
+                        else if (car != null && car.getClass().equals(ReservationCar.class)){
+                        	Color color3 = Color.green;
+                        	drawPlace(graphics, location, color3);
+                        	ReservationCar++;
+                        	ReservedSpot--;
                         }
                    }
             }
@@ -86,10 +99,8 @@ public class CarParkView extends AbstractView {
             }
             
         }
-		
-          
-        
-    
+		     
+            
         /**
          * Paint a place on this car park view in a given color.
          */
@@ -106,5 +117,11 @@ public class CarParkView extends AbstractView {
         }
         public static int GetParkPass(){
         	return ParkPassCar;
+        }
+        public static int GetReservationCar(){
+        	return ReservationCar;
+        }
+        public static int GetReservedSpot(){
+        	return ReservedSpot;
         }
     }

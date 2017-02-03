@@ -40,6 +40,9 @@ public class PieView extends AbstractView {
 				" RrsvCar: " + aantalReservationCar + " EmptySpot: " + aantalEmpty);
         //System.out.println(aantalAdHoc + ": " + calculateDegrees(270));
   
+        g.setColor(Color.white);
+        g.fillArc(10, 10, 250, 250, 350, 360);
+        
         g.setColor(Color.red);
         g.fillArc(10, 10, 250, 250, 0, calculateDegrees(aantalAdHoc));
         g.setColor(Color.blue);

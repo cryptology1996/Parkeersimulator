@@ -20,7 +20,6 @@ public class Simulator extends AbstractModel{
     private int PayingCars;
     double totalRevenue;
     double ticketPrice = 7.50;
-    private  boolean run = true;
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
@@ -49,8 +48,8 @@ public class Simulator extends AbstractModel{
     
   public void runCommand(int getal) {
     	int i = getal;
-    	while(i > 0 && run == true){
-    		tick();    		
+    	while(i > 0){
+    		tick(); 
     		i--; }
     	}
     
@@ -240,4 +239,8 @@ public class Simulator extends AbstractModel{
     public int getExitCarQueue() {
     	return exitCarQueue.carsInQueue(); 
     }
+    
+    public void ChangeWeekAH(int getal){
+		  this.weekDayArrivals = getal;
+	  }
 }

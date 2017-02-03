@@ -228,4 +228,16 @@ public class Simulator extends AbstractModel{
     	parkeerGarage.removeCarAt(car.getLocation());
         exitCarQueue.addCar(car);
     }
+    
+    public int getEntranceCarQueue() {
+    	return entranceCarQueue.carsInQueue(); 
+    }
+    
+    public int getPassCarQueue() {
+    	return entrancePassQueue.carsInQueue();
+    }
+    
+    public int getExitCarQueue() {
+    	return exitCarQueue.carsInQueue(); 
+    }
 }

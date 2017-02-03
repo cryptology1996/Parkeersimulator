@@ -78,7 +78,6 @@ public class CarParkView extends AbstractView {
                         	Color color3 = Color.green;
                         	drawPlace(graphics, location, color3);
                         	ReservationCar++;
-                        	ReservedSpot--;
                         }
                    }
             }

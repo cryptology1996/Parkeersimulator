@@ -51,6 +51,7 @@ public class TextOverview extends AbstractView {
 		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		revenue.add(lblRevenue);
 		revenue.add(txtRevenue);
+		
 	
 		/*
 		 * Expected revenue JTextField en JLabel

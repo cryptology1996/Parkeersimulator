@@ -46,7 +46,7 @@ public class Simulator extends AbstractModel{
         
 
     }
-
+    
   public void runCommand(int getal) {
     	int i = getal;
     	while(i > 0 && run == true){
@@ -228,5 +228,4 @@ public class Simulator extends AbstractModel{
     	parkeerGarage.removeCarAt(car.getLocation());
         exitCarQueue.addCar(car);
     }
-
 }

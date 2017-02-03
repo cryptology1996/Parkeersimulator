@@ -35,7 +35,9 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the AdHoc Cars
 		 */
 		JLabel LadHoc = new JLabel("Percentage of Adhoc Cars :");
-		TadHoc = new JTextField("   0%   ", Font.BOLD);
+		TadHoc = new JTextField("   0%   ");
+		Font bigFont = TadHoc.getFont().deriveFont(Font.BOLD, 13f);
+		TadHoc.setFont(bigFont);
 		TadHoc.setColumns(3);
 		TadHoc.setEditable(false);
 		TadHoc.setBackground(Color.RED);
@@ -47,7 +49,9 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the ParkingPass Cars
 		 */
 		JLabel LpassHolder = new JLabel("Percentage of Parking Pass Cars :");
-		TpassHolder = new JTextField("   0%   ", Font.BOLD);
+		TpassHolder = new JTextField("   0%   ");
+		Font bigFont2 = TpassHolder.getFont().deriveFont(Font.BOLD, 13f);
+		TpassHolder.setFont(bigFont2);
 		TpassHolder.setColumns(3);
 		TpassHolder.setEditable(false);
 		TpassHolder.setBackground(Color.BLUE);
@@ -59,7 +63,9 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the Reservation spots in the garage.
 		 */
 		JLabel LreservationSpot = new JLabel("Percentage of Reservation Spots :");
-		TreservationSpot = new JTextField("   0%   ", Font.BOLD);
+		TreservationSpot = new JTextField("   0%   ");
+		Font bigFont3 = TreservationSpot.getFont().deriveFont(Font.BOLD, 13f);
+		TreservationSpot.setFont(bigFont3);
 		TreservationSpot.setColumns(3);
 		TreservationSpot.setEditable(false);
 		TreservationSpot.setBackground(Color.yellow);
@@ -71,7 +77,9 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the Reservation Cars in the garage.
 		 */
 		JLabel LreservationCar = new JLabel("Percentage of Reservation Cars :");
-		TreservationCar = new JTextField("   0%   ", Font.BOLD);
+		TreservationCar = new JTextField("   0%   ");
+		Font bigFont4 = TreservationCar.getFont().deriveFont(Font.BOLD, 13f);
+		TreservationCar.setFont(bigFont4);
 		TreservationCar.setColumns(3);
 		TreservationCar.setEditable(false);
 		TreservationCar.setBackground(Color.green);
@@ -84,7 +92,9 @@ public class TypeOfCarView extends AbstractView{
 		 * Create a JTextField and JLabel for the Empty Spots in the garage
 		 */		
 		JLabel Lempty = new JLabel("Percentage of Empty Spots :");
-		Tempty = new JTextField("  100%  ", Font.BOLD);
+		Tempty = new JTextField("  100%  ");
+		Font bigFont5 = Tempty.getFont().deriveFont(Font.BOLD, 13f);
+		Tempty.setFont(bigFont5);
 		Tempty.setColumns(4);
 		Tempty.setEditable(false);
 		Tempty.setBackground(Color.white);

@@ -17,7 +17,6 @@ public class Simulator extends AbstractModel{
     private CarQueue exitCarQueue;
     //private SimulatorView simulatorView;
     private ParkeerGarage parkeerGarage;
-    private ReservationCar reservationCar;
     private int PayingCars;
     double totalRevenue;
     double ticketPrice = 7.50;

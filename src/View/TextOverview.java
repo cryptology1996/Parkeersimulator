@@ -30,40 +30,45 @@ public class TextOverview extends AbstractView {
 	
 	public TextOverview(Simulator model) {
 		super(model);
-		
 		this.simulator = model;
-		//setBounds(100, 100, 450, 339);
+		
+		
 		
 		/**
 		 * Create the panel
 		 */
-		
 		JPanel revenue = new JPanel();
 		revenue.setLayout(new FlowLayout());
 		revenue.setBackground(Color.LIGHT_GRAY);
+		
+		/*
+		 * Revenue JTextField en JLabel
+		 */
 		JLabel lblRevenue = new JLabel("Total revenue");
 		txtRevenue = new JTextField();
 		txtRevenue.setEditable(false);
 		txtRevenue.setColumns(10);
 		txtRevenue.setBackground(Color.LIGHT_GRAY);
-		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
+		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		revenue.add(lblRevenue);
 		revenue.add(txtRevenue);
-		this.add(revenue);
 	
-		
-		JPanel expectedRevenue = new JPanel();
-		expectedRevenue.setLayout(new FlowLayout());
-		expectedRevenue.setBackground(Color.LIGHT_GRAY);
+		/*
+		 * Expected revenue JTextField en JLabel
+		 */
 		JLabel expRevL = new JLabel("Expected Revenue");
 		txtExpRevenue = new JTextField();
 		txtExpRevenue.setEditable(false);
 		txtExpRevenue.setColumns(10);
 		txtExpRevenue.setBackground(Color.LIGHT_GRAY);
-		txtExpRevenue.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
-		expectedRevenue.add(expRevL);
-		expectedRevenue.add(txtExpRevenue);
-		this.add(expectedRevenue);
+		txtExpRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
+		revenue.add(expRevL);
+		revenue.add(txtExpRevenue);
+		
+		/*
+		 * Add everything to the JPanel
+		 */
+		this.add(revenue);
 		
 
 		// using the calc function to calc the revenue

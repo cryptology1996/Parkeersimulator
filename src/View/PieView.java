@@ -48,7 +48,7 @@ public class PieView extends AbstractView {
         g.setColor(Color.orange);
         g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc), calculateDegrees(aantalPassCar));
        
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.magenta);
         g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
         							calculateDegrees(aantalPassCar), calculateDegrees(aantalReservedSpot));
         

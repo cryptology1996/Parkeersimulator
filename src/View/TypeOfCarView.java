@@ -68,7 +68,7 @@ public class TypeOfCarView extends AbstractView{
 		TreservationSpot.setFont(bigFont3);
 		TreservationSpot.setColumns(3);
 		TreservationSpot.setEditable(false);
-		TreservationSpot.setBackground(Color.yellow);
+		TreservationSpot.setBackground(Color.MAGENTA);
 		TreservationSpot.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		panel1.add(LreservationSpot);
 		panel1.add(TreservationSpot);

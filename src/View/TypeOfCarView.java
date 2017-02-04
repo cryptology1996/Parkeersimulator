@@ -8,8 +8,7 @@ import Model.Simulator;
 
 /**
  * Creates a view of the type's of cars inside the parking garage
- * 
- *
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
  */
 public class TypeOfCarView extends AbstractView{
 	private JTextField TadHoc;
@@ -18,8 +17,9 @@ public class TypeOfCarView extends AbstractView{
 	private JTextField TreservationSpot;
 	private JTextField TreservationCar;
 	
-	/*
+	/**
 	 * Constructor of TypeOfCarView
+	 * @param model gives information needed from the simulator
 	 */
 	public TypeOfCarView(Simulator model) {
 		super(model);
@@ -108,14 +108,14 @@ public class TypeOfCarView extends AbstractView{
 		
 	}
 	
-	/*
+	/**
 	 * Method updateView for updating the view each time something changes
 	 */
 	public void updateView() {
 		calculatePercentage();		
 	}
 	
-	/*
+	/**
 	 * Method calculatePercentage, calculates the percentages.
 	 */
 	public void calculatePercentage()

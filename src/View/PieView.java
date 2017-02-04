@@ -6,6 +6,10 @@ import java.awt.*;
 import javax.swing.*;
 import Model.*;
 
+/**
+ * Creates the PieView inside the JFrame
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
+ */
 public class PieView extends AbstractView {
     private int aantalAdHoc;
     private int aantalPassCar;
@@ -13,11 +17,20 @@ public class PieView extends AbstractView {
     private int aantalReservationCar;
     private int aantalEmpty;
 
+    /**
+     * Creates the constructor
+     * @param simulator gives information needed from the simulator
+     */
     public PieView(Simulator simulator) {
     	super(simulator); 
     	setSize(300,300);
     }
     
+    /**
+     * calculates the degrees that are used inside the PieChart 
+     * @param aantalCars sets the amount of cars
+     * @return degrees
+     */
     public int calculateDegrees(double aantalCars) 
     {
     	int degrees;
@@ -29,6 +42,9 @@ public class PieView extends AbstractView {
     	
     }
 
+    /**
+     * Paints the PieChart itself
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         aantalAdHoc = CarParkView.GetAdHoc();

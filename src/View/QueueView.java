@@ -31,7 +31,7 @@ public class QueueView extends AbstractView{
 		JPanel queue = new JPanel();
 		queue.setBackground(Color.LIGHT_GRAY);
 		
-		/*
+		/**
 		 * Entrance Queue JTextField and JLabel
 		 */
 		JLabel lblEntranceQueue = new JLabel("Entrance Queue:                                       ");
@@ -43,7 +43,7 @@ public class QueueView extends AbstractView{
 		queue.add(lblEntranceQueue);
 		queue.add(txtEntranceQueue);
 		
-		/*
+		/**
 		 * Entrance Pass Queue JTextField and JLabel
 		 */
 		
@@ -56,7 +56,7 @@ public class QueueView extends AbstractView{
 		queue.add(lblEntrancePassQueue);
 		queue.add(txtEntrancePassQueue);
 		
-		/*
+		/**
 		 * Exit Queue JTextField and JLabel
 		 */
 		JLabel lblExitQueue = new JLabel("Exit Queue:                                                 ");
@@ -68,7 +68,7 @@ public class QueueView extends AbstractView{
 		queue.add(lblExitQueue);
 		queue.add(txtExitQueue);
 		
-		/*
+		/**
 		 * Add everything to the JPanel
 		 */
 		this.add(queue);
@@ -79,13 +79,16 @@ public class QueueView extends AbstractView{
 		
 	}
 	
+	/**
+	 * Updates the view so the numbers inside the textfield change accordingly
+	 */
 	public void updateView(){
 		entranceQueue();
 		entrancePassQueue();
 		exitQueue();
 	}
 	
-	/*
+	/**
 	 * Fill Entrance Queue text field
 	 */
 	
@@ -94,7 +97,7 @@ public class QueueView extends AbstractView{
 		txtEntranceQueue.setText("        "+entranceQueue);
 	}
 	
-	/*
+	/**
 	 * Fill Entrance Pass Queue text field
 	 */
 	
@@ -103,7 +106,7 @@ public class QueueView extends AbstractView{
 	txtEntrancePassQueue.setText("        "+entrancePassQueue);
 	}
 	
-	/*
+	/**
 	 * Fill Exit Queue text field
 	 */
 	public void exitQueue() {

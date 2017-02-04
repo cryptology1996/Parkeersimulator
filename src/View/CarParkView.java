@@ -5,6 +5,11 @@ import java.awt.*;
 
 import Model.*;
 
+/**
+ * Creates the image in the simulator for the Carpark itself
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
+ *
+ */
 public class CarParkView extends AbstractView {
         
 		private static int AdHocCar;
@@ -110,6 +115,11 @@ public class CarParkView extends AbstractView {
                     20 - 1,
                     10 - 1); // TODO use dynamic size or constants
         }
+       
+        /**
+         * The methods below are getters for the PieView and the textOverview classes
+        */
+        
         public static int GetAdHoc(){
         	return AdHocCar;
         }

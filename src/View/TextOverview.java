@@ -62,12 +62,9 @@ public class TextOverview extends AbstractView {
 		add(expRevL);
 		add(txtExpRevenue);
 		
-		/*8
+		/**
 		 * Add everything to the JPanel
 		 */
-		
-
-		// using the calc function to calc the revenue
 		calcRevenue();
 		calcExpRevenue();
 

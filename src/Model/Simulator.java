@@ -342,10 +342,7 @@ public class Simulator extends AbstractModel{
 	  this.set = check;
 	}
   
-  public void setReset(boolean check){
-	  this.reset = check;
-	  
-  }
+
   public void setStop(boolean stopping)
   {
 	 stop = stopping;

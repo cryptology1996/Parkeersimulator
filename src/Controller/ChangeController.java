@@ -26,6 +26,8 @@ public class ChangeController extends AbstractController implements ActionListen
 	private JLabel PaySpeed;
 	private JLabel ExitSpeed;
 	
+	private boolean editable;
+	
 	private ActionEvent event;
 	
 	private JButton Set;
@@ -257,6 +259,10 @@ public class ChangeController extends AbstractController implements ActionListen
 			};
 			performerThread.start();
 			}
+	
+	 
+	  
+
 
 
 }

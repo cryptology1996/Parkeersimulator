@@ -8,6 +8,13 @@ import java.io.IOException;
 
 import Model.*;
 
+/**
+ * Class for the ChangeController that creates the change menu in the simulator
+ * Contains buttons, textfields and actionlistener.
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
+ *
+ */
+
 public class ChangeController extends AbstractController implements ActionListener {
 	private JLabel WeekAdHoc;
 	private JLabel WeekendAdHoc;
@@ -35,6 +42,9 @@ public class ChangeController extends AbstractController implements ActionListen
 	private JTextField paySpeedtxt;
 	private JTextField exitSpeedtxt;
 	
+	/*
+	 * Constructs the constructor for ChangeController
+	 */
 	
 	public ChangeController(Simulator simulator) {
 		super (simulator);
@@ -131,8 +141,10 @@ public class ChangeController extends AbstractController implements ActionListen
 		
 	}
 		
-		
-		
+	/**
+     * Sets the from the ActionListener recieved ActionEvent to the field event
+     * @param e
+	*/	
 	
 	public void setActionEvent(ActionEvent e) {
 		event = e;
@@ -160,6 +172,9 @@ public class ChangeController extends AbstractController implements ActionListen
 		 Thread performerThread = new Thread(){
 			
 
+			 /**
+			  * Creates the commands that the buttons execute
+			  */
 			 public void run (){
 				ActionEvent e = getActionEvent();
 				String command = e.getActionCommand();

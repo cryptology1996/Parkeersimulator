@@ -112,6 +112,9 @@ public void actionPerformed(ActionEvent e)
 	 setActionEvent(e);
 	 Thread performerThread = new Thread(){
 		
+		 /**
+		  * Creates the commands that the buttons execute
+		  */
 
 		 public void run (){
 			ActionEvent e = getActionEvent();

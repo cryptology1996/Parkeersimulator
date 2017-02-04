@@ -15,6 +15,10 @@ public class ChangeController extends AbstractController implements ActionListen
 	private JLabel WeekendPass;
 	private JLabel WeekReserve;
 	private JLabel WeekendReserve;
+	private JLabel EntrySpeed;
+	private JLabel PaySpeed;
+	private JLabel ExitSpeed;
+	
 	private ActionEvent event;
 	
 	private JButton Set;
@@ -27,19 +31,23 @@ public class ChangeController extends AbstractController implements ActionListen
 	private JTextField WeekRes;
 	private JTextField WeekendRes;
 	
+	private JTextField entrySpeedtxt;
+	private JTextField paySpeedtxt;
+	private JTextField exitSpeedtxt;
+	
 	
 	public ChangeController(Simulator simulator) {
 		super (simulator);
 		
 		
-		WeekAdHoc = new JLabel("Weekday AdHoc:   ");
+		WeekAdHoc = new JLabel("Weekday AdHoc:    ");
 		WeekAH = new JTextField(5);
 		WeekAH.setText("60");
 		WeekAH.setEditable(true);
 		add(WeekAdHoc);
 		add(WeekAH);
 		
-		WeekendAdHoc = new JLabel("Weekend AdHoc:   ");
+		WeekendAdHoc = new JLabel("Weekend AdHoc:    ");
 		WeekendAH = new JTextField(5);
 		WeekendAH.setText("100");
 		WeekendAH.setEditable(true);
@@ -47,7 +55,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		add(WeekendAH);
 		
 		
-		WeekDayPass = new JLabel("Weekday Pass:      ");
+		WeekDayPass = new JLabel("Weekday Pass:       ");
 		WeekP = new JTextField(5);
 		WeekP.setText("25");
 		WeekP.setEditable(true);
@@ -55,7 +63,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		add(WeekP);
 		
 		
-		WeekendPass = new JLabel("Weekend Pass:      ");
+		WeekendPass = new JLabel("Weekend Pass:       ");
 		WeekendP = new JTextField(5);
 		WeekendP.setText("10");
 		WeekendP.setEditable(true);
@@ -63,7 +71,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		add(WeekendP);
 		
 		
-		WeekReserve = new JLabel("Week Reserve:       ");
+		WeekReserve = new JLabel("Week Reserve:        ");
 		WeekRes = new JTextField(5);
 		WeekRes.setText("25");
 		WeekRes.setEditable(true);
@@ -71,12 +79,38 @@ public class ChangeController extends AbstractController implements ActionListen
 		add(WeekRes);
 		
 		
-		WeekendReserve = new JLabel("Weekend Reserve");
+		WeekendReserve = new JLabel("Weekend Reserve: ");
 		WeekendRes = new JTextField(5);
 		WeekendRes.setText("10");
 		WeekendRes.setEditable(true);
 		add(WeekendReserve);
 		add(WeekendRes);
+		
+		JLabel emptyspace = new JLabel("                                              ");
+		add(emptyspace);
+		
+		EntrySpeed = new JLabel("Entry Speed:             ");
+		entrySpeedtxt = new JTextField(5);
+		entrySpeedtxt.setText("3");
+		entrySpeedtxt.setEditable(true);
+		add(EntrySpeed);
+		add(entrySpeedtxt);
+		
+		PaySpeed = new JLabel("Payment Speed:      ");
+		paySpeedtxt = new JTextField(5);
+		paySpeedtxt.setText("5");
+		paySpeedtxt.setEditable(true);
+		add(PaySpeed);
+		add(paySpeedtxt);
+		
+		ExitSpeed = new JLabel("Exit Speed:                ");
+		exitSpeedtxt = new JTextField(5);
+		exitSpeedtxt.setText("7");
+		exitSpeedtxt.setEditable(true);
+		add(ExitSpeed);
+		add(exitSpeedtxt);
+		
+		
 		
 		Set = new JButton("Set");
 		Set.addActionListener((ActionListener) this);
@@ -149,12 +183,26 @@ public class ChangeController extends AbstractController implements ActionListen
 					int Weekendres  = Integer.parseInt(WeekendRes.getText().trim());
 					simulator.ChangeWeekendRes(Weekendres);
 					
+					int entryspeed = Integer.parseInt(entrySpeedtxt.getText().trim());
+					simulator.ChangeEntrySpeed(entryspeed);
+					
+					int payspeed = Integer.parseInt(paySpeedtxt.getText().trim());
+					simulator.ChangePaySpeed(payspeed);
+					
+					int exitspeed = Integer.parseInt(exitSpeedtxt.getText().trim());
+					simulator.ChangeExitSpeed(exitspeed);
+					
 					WeekAH.setEditable(false);
 					WeekendAH.setEditable(false);
 					WeekP.setEditable(false);
 					WeekendP.setEditable(false);
 					WeekRes.setEditable(false);
 					WeekendRes.setEditable(false);
+					entrySpeedtxt.setEditable(false);
+					paySpeedtxt.setEditable(false);
+					exitSpeedtxt.setEditable(false);
+					
+					simulator.CheckIsSet(true);
 				}
 			
 			if (command == "Reset"){
@@ -176,6 +224,17 @@ public class ChangeController extends AbstractController implements ActionListen
 				
 				WeekendRes.setEditable(true);
 				WeekendRes.setText("10");
+				
+				entrySpeedtxt.setEditable(true);
+				entrySpeedtxt.setText("3");
+				
+				paySpeedtxt.setEditable(true);
+				paySpeedtxt.setText("7");
+				
+				exitSpeedtxt.setEditable(true);
+				exitSpeedtxt.setText("5");
+				
+				simulator.CheckIsSet(false);
 				
 				
 			}

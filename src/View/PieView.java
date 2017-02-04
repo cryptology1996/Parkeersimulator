@@ -38,28 +38,27 @@ public class PieView extends AbstractView {
         aantalEmpty = 540 - aantalPassCar - aantalAdHoc - aantalReservedSpot - aantalReservationCar;
         System.out.println("AdHoc:" + aantalAdHoc + " PassCar:" + aantalPassCar + " RrsvSpot: " + aantalReservedSpot +
 				" RrsvCar: " + aantalReservationCar + " EmptySpot: " + aantalEmpty);
-        //System.out.println(aantalAdHoc + ": " + calculateDegrees(270));
   
         g.setColor(Color.white);
-        g.fillArc(10, 10, 250, 250, 350, 360);
+        g.fillArc(15, 15, 250, 250, 350, 360);
         
         g.setColor(Color.red);
-        g.fillArc(10, 10, 250, 250, 0, calculateDegrees(aantalAdHoc));
+        g.fillArc(15, 15, 250, 250, 0, calculateDegrees(aantalAdHoc));
         g.setColor(Color.orange);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc), calculateDegrees(aantalPassCar));
+        g.fillArc(15, 15, 250, 250, calculateDegrees(aantalAdHoc), calculateDegrees(aantalPassCar));
        
         g.setColor(Color.magenta);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        g.fillArc(15, 15, 250, 250, calculateDegrees(aantalAdHoc) + 
         							calculateDegrees(aantalPassCar), calculateDegrees(aantalReservedSpot));
         
         g.setColor(Color.green);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        g.fillArc(15, 15, 250, 250, calculateDegrees(aantalAdHoc) + 
         							calculateDegrees(aantalPassCar) + 
         							calculateDegrees(aantalReservedSpot), calculateDegrees(aantalReservationCar));
       
     
         g.setColor(Color.white);
-        g.fillArc(10, 10, 250, 250, calculateDegrees(aantalAdHoc) + 
+        g.fillArc(15, 15, 250, 250, calculateDegrees(aantalAdHoc) + 
         							calculateDegrees(aantalPassCar) +
         							calculateDegrees(aantalReservedSpot) +
         							calculateDegrees(aantalReservationCar), calculateDegrees(aantalEmpty));

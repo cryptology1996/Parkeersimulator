@@ -34,7 +34,7 @@ public class TypeOfCarView extends AbstractView{
 		/*
 		 * Create a JTextField and JLabel for the AdHoc Cars
 		 */
-		JLabel LadHoc = new JLabel("Percentage of Adhoc Cars :");
+		JLabel LadHoc = new JLabel("Percentage of Adhoc Cars:                ");
 		TadHoc = new JTextField("   0%  ");
 		Font bigFont = TadHoc.getFont().deriveFont(Font.BOLD, 13f);
 		TadHoc.setFont(bigFont);
@@ -48,7 +48,7 @@ public class TypeOfCarView extends AbstractView{
 		/*
 		 * Create a JTextField and JLabel for the ParkingPass Cars
 		 */
-		JLabel LpassHolder = new JLabel("Percentage of Parking Pass Cars :");
+		JLabel LpassHolder = new JLabel("Percentage of Parking Pass Cars:   ");
 		TpassHolder = new JTextField("   0%  ");
 		Font bigFont2 = TpassHolder.getFont().deriveFont(Font.BOLD, 13f);
 		TpassHolder.setFont(bigFont2);
@@ -62,7 +62,7 @@ public class TypeOfCarView extends AbstractView{
 		/*
 		 * Create a JTextField and JLabel for the Reservation spots in the garage.
 		 */
-		JLabel LreservationSpot = new JLabel("Percentage of Reservation Spots :");
+		JLabel LreservationSpot = new JLabel("Percentage of Reservation Spots:    ");
 		TreservationSpot = new JTextField("   0%  ");
 		Font bigFont3 = TreservationSpot.getFont().deriveFont(Font.BOLD, 13f);
 		TreservationSpot.setFont(bigFont3);
@@ -76,7 +76,7 @@ public class TypeOfCarView extends AbstractView{
 		/*
 		 * Create a JTextField and JLabel for the Reservation Cars in the garage.
 		 */
-		JLabel LreservationCar = new JLabel("Percentage of Reservation Cars :");
+		JLabel LreservationCar = new JLabel("Percentage of Reservation Cars:      ");
 		TreservationCar = new JTextField("   0%  ");
 		Font bigFont4 = TreservationCar.getFont().deriveFont(Font.BOLD, 13f);
 		TreservationCar.setFont(bigFont4);
@@ -91,7 +91,7 @@ public class TypeOfCarView extends AbstractView{
 		/*
 		 * Create a JTextField and JLabel for the Empty Spots in the garage
 		 */		
-		JLabel Lempty = new JLabel("Percentage of Empty Spots :");
+		JLabel Lempty = new JLabel("Percentage of Empty Spots:               ");
 		Tempty = new JTextField("  100%  ");
 		Font bigFont5 = Tempty.getFont().deriveFont(Font.BOLD, 13f);
 		Tempty.setFont(bigFont5);

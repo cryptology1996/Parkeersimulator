@@ -36,39 +36,35 @@ public class TextOverview extends AbstractView {
 		/**
 		 * Create the panel
 		 */
-		JPanel revenue = new JPanel();
-		revenue.setLayout(new FlowLayout());
-		revenue.setBackground(Color.LIGHT_GRAY);
+		this.setLayout(new FlowLayout());
+		this.setBackground(Color.LIGHT_GRAY);
 		
 		/*
 		 * Revenue JTextField en JLabel
 		 */
-		JLabel lblRevenue = new JLabel("Total revenue");
-		txtRevenue = new JTextField();
+		JLabel lblRevenue = new JLabel("Total revenue:                                           ");
+		txtRevenue = new JTextField(5);
 		txtRevenue.setEditable(false);
-		txtRevenue.setColumns(10);
 		txtRevenue.setBackground(Color.LIGHT_GRAY);
 		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
-		revenue.add(lblRevenue);
-		revenue.add(txtRevenue);
+		add(lblRevenue);
+		add(txtRevenue);
 		
 	
 		/*
 		 * Expected revenue JTextField en JLabel
 		 */
-		JLabel expRevL = new JLabel("Expected Revenue of remaining cars");
-		txtExpRevenue = new JTextField();
+		JLabel expRevL = new JLabel("Revenue of remaining cars:                  ");
+		txtExpRevenue = new JTextField(5);
 		txtExpRevenue.setEditable(false);
-		txtExpRevenue.setColumns(10);
 		txtExpRevenue.setBackground(Color.LIGHT_GRAY);
 		txtExpRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
-		revenue.add(expRevL);
-		revenue.add(txtExpRevenue);
+		add(expRevL);
+		add(txtExpRevenue);
 		
 		/*
 		 * Add everything to the JPanel
 		 */
-		this.add(revenue);
 		
 
 		// using the calc function to calc the revenue
@@ -95,7 +91,7 @@ public class TextOverview extends AbstractView {
 		
 		int totalCars = simulator.getPayingCars();	
 		double totalRevenue = totalCars * ticketPrice;
-		txtRevenue.setText(" "+totalRevenue+"$");
+		txtRevenue.setText(" € "+totalRevenue);
 	}
 	
 	/**
@@ -107,6 +103,6 @@ public class TextOverview extends AbstractView {
 	
 	double totalExpRevenue = totalCarsLeft * ticketPrice;
 	
-		txtExpRevenue.setText(" "+totalExpRevenue+"$");	
+		txtExpRevenue.setText(" € "+totalExpRevenue);	
 	}
 }

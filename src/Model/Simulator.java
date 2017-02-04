@@ -2,8 +2,7 @@ package Model;
 
 import java.util.Random;
 
-import Model.*;
-import View.*;
+import javax.swing.JOptionPane;
 
 public class Simulator extends AbstractModel{
 
@@ -19,11 +18,12 @@ public class Simulator extends AbstractModel{
     private ParkeerGarage parkeerGarage;
     private int PayingCars;
     double totalRevenue;
-    double ticketPrice = 7.50;
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
     private int tickPause = 250;
+    
+    private boolean run;
 
     int weekDayArrivals = 60; // average number of arriving cars per hour
     int weekendArrivals = 100; // average number of arriving cars per hour
@@ -48,9 +48,12 @@ public class Simulator extends AbstractModel{
     
   public void runCommand(int getal) {
     	int i = getal;
-    	while(i > 0){
+    	while(i > 0 && run == true){
     		tick(); 
     		i--; }
+    	if (run == false){
+    		JOptionPane.showMessageDialog(null, "You need to Set all values before starting");
+    	}
     	}
     
     public void run() {
@@ -257,6 +260,27 @@ public class Simulator extends AbstractModel{
 	  }
   public void ChangeWeekendRes(int getal){
 	  this.weekendReservArrivals = getal;
+  }
+  
+  public void ChangeEntrySpeed(int getal){
+	  this.enterSpeed = getal;
+  }
+  
+  public void ChangePaySpeed(int getal){
+	  this.paymentSpeed = getal;
+  }
+  
+  public void ChangeExitSpeed(int getal){
+	  this.exitSpeed = getal;
+  }
+  
+  public void CheckIsSet(boolean check){
+	  if (check == true){
+		  this.run = true;
+	  }
+	  if (check = false){
+		  this.run = false;
+	  }
   }
 }
     

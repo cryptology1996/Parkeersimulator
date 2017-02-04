@@ -4,6 +4,8 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import java.awt.*;
+
 public class Simulator extends AbstractModel{
 
 	private static final String AD_HOC = "1";
@@ -52,7 +54,8 @@ public class Simulator extends AbstractModel{
     		tick(); 
     		i--; }
     	if (run == false){
-    		JOptionPane.showMessageDialog(null, "You need to Set all values before starting");
+    		Toolkit.getDefaultToolkit().beep();
+    		JOptionPane.showMessageDialog(null, "You need to Set all values before starting", "Error",  JOptionPane.ERROR_MESSAGE);
     	}
     	}
     

@@ -32,7 +32,6 @@ public class Simulator extends AbstractModel{
     private int tickPause = 250;
     
     private boolean set;
-    private boolean reset;
     private boolean stop;
 
     int weekDayArrivals = 60; // average number of arriving cars per hour

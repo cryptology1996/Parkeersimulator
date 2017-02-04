@@ -67,7 +67,7 @@ public Controller(Simulator simulator) {
         start.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
         add(start, l3);
        
-        stop= new JButton("Reset");
+        stop= new JButton("Stop");
         stop.addActionListener((ActionListener) this);
         GridBagConstraints l4 = new GridBagConstraints();
 		l4.fill = GridBagConstraints.HORIZONTAL;
@@ -119,6 +119,7 @@ public void actionPerformed(ActionEvent e)
 		 public void run (){
 			ActionEvent e = getActionEvent();
 			String command = e.getActionCommand();
+			simulator.setStop(false);
 			if (command == "One Step"){
 				simulator.runCommand(1);
 			} 
@@ -126,16 +127,20 @@ public void actionPerformed(ActionEvent e)
 				simulator.runCommand(100);
 				}
 			if (command == "Start"){
+				
 				simulator.runCommand(100000);
 			}
-		if (command == "Reset"){
-			try {
-				Runtime.getRuntime().exec("java -jar Parkeergarage.jar");
-				} catch (IOException e1) {
-					
-				e1.printStackTrace();
-				}
-			     System.exit(1);
+		if (command == "Stop"){
+			
+			simulator.setStop(true);
+			
+			//try {
+			//	Runtime.getRuntime().exec("java -jar Parkeergarage.jar");
+			//	} catch (IOException e1) {
+			//		
+			//	e1.printStackTrace();
+			//	}
+			//     System.exit(1);
 				
 			}
 	

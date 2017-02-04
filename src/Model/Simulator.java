@@ -32,6 +32,7 @@ public class Simulator extends AbstractModel{
     private int tickPause = 250;
     
     private boolean run;
+    private boolean stop;
 
     int weekDayArrivals = 60; // average number of arriving cars per hour
     int weekendArrivals = 100; // average number of arriving cars per hour
@@ -66,12 +67,22 @@ public class Simulator extends AbstractModel{
     	int i = getal;
     	while(i > 0 && run == true){
     		tick(); 
-    		i--; }
+    		i--; 
+    			if(stop){
+    			return;
+    			}
+    		}
     	if (run == false){
     		Toolkit.getDefaultToolkit().beep();
     		JOptionPane.showMessageDialog(null, "You need to Set all values before starting", "Error",  JOptionPane.ERROR_MESSAGE);
     	}
     	}
+  
+  public void setStop(boolean stopping)
+  {
+	 stop = stopping;
+  
+  }
     
   	/**
   	 * The tick method handles the entire simulation

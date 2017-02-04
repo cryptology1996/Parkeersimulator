@@ -220,6 +220,7 @@ public class ChangeController extends AbstractController implements ActionListen
 					exitSpeedtxt.setEditable(false);
 					
 					simulator.setSet(true);
+					simulator.setStart(false);
 				}
 			
 			if (command == "Reset"){

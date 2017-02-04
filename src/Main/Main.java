@@ -9,9 +9,10 @@ import Controller.*;
 import Model.*;
 import View.*;
 
-/*
+/**
  * Creates the public static void main(String [] args) the program uses to start up.
  * Also creates all the view and controller instances.
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
  */
 
 public class Main {

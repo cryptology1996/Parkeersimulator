@@ -1,5 +1,9 @@
 package Model;
 
+/**
+ * creates a class location that returns the locations for other classes
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
+ */
 public class Location extends AbstractModel{
 
     private int floor;

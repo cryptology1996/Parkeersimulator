@@ -6,6 +6,13 @@ import javax.swing.JOptionPane;
 
 import java.awt.*;
 
+/**
+ * Creates the simulator and contains all its settings
+ * 
+ * @author Martijn Bakker, Albert van der Berg, Antonie Groenveld, Arneld van der Veen and Daniel Bouius
+ */
+
+
 public class Simulator extends AbstractModel{
 
 	private static final String AD_HOC = "1";
@@ -16,10 +23,9 @@ public class Simulator extends AbstractModel{
     private CarQueue entrancePassQueue;
     private CarQueue paymentCarQueue;
     private CarQueue exitCarQueue;
-    //private SimulatorView simulatorView;
     private ParkeerGarage parkeerGarage;
+   
     private int PayingCars;
-    double totalRevenue;
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
@@ -31,13 +37,17 @@ public class Simulator extends AbstractModel{
     int weekendArrivals = 100; // average number of arriving cars per hour
     int weekDayPassArrivals = 25; // average number of arriving cars per hour
     int weekendPassArrivals = 10; // average number of arriving cars per hour
-    int weekDayReservArrivals= 25;
-    int weekendReservArrivals = 10;
+    int weekDayReservArrivals= 25; // average number of arriving cars per hour
+    int weekendReservArrivals = 10; // average number of arriving cars per hour
 
     int enterSpeed = 3; // number of cars that can enter per minute
     int paymentSpeed = 7; // number of cars that can pay per minute
     int exitSpeed = 5; // number of cars that can leave per minute
 
+    /**
+     * creates the constructor for Simulator
+     * @param parkeerGarage gives the simulator information from the parkeerGarage
+     */
     public Simulator(ParkeerGarage parkeerGarage) {
     	this.parkeerGarage = parkeerGarage;
         entranceCarQueue = new CarQueue();
@@ -48,6 +58,10 @@ public class Simulator extends AbstractModel{
 
     }
     
+    /**
+     * This is the method that starts up the simulator when a button is pressed
+     * @param getal is the number of times the simulator will tick(is given by the buttons)
+     */
   public void runCommand(int getal) {
     	int i = getal;
     	while(i > 0 && run == true){
@@ -59,13 +73,9 @@ public class Simulator extends AbstractModel{
     	}
     	}
     
-    public void run() {
-        for (int i = 0; i < 10000; i++) {
-            tick();
-            notifyViews();
-        }
-    }
-
+  	/**
+  	 * The tick method handles the entire simulation
+  	 */
     private void tick() {
     	advanceTime();
     	handleExit();
@@ -81,6 +91,9 @@ public class Simulator extends AbstractModel{
     	
     }
 
+    /**
+     * Advances the time inside the simulation
+     */
     private void advanceTime(){
         // Advance the time by one minute.
         minute++;
@@ -98,6 +111,9 @@ public class Simulator extends AbstractModel{
 
     }
 
+    /**
+     * handleEntrance groups all the entrance queues into one method 
+     */
     private void handleEntrance(){
     	
     	carsArriving();
@@ -105,19 +121,25 @@ public class Simulator extends AbstractModel{
     	carsEntering(entranceCarQueue);  	
     }
     
+    /**
+     * handleExit groups all the exit queues into one method
+     */
     private void handleExit(){
         carsReadyToLeave();
         carsPaying();
         carsLeaving();
     }
-    
+    /**
+     * updateViews updates the visual aspects of the simulator after each tick
+     */
     public void updateViews(){
     	parkeerGarage.tick();
-        // Update the car park view.
         notifyViews();
     }
 
-    
+    /**
+     * carsArriving handles all the newly added cars and gives them the correct name
+     */
     private void carsArriving(){
     	int numberOfCars=getNumberOfCars(weekDayArrivals, weekendArrivals);
         addArrivingCars(numberOfCars, AD_HOC);    	
@@ -127,6 +149,10 @@ public class Simulator extends AbstractModel{
         addArrivingCars(numberOfCars, RESERV_CAR);
     }
 
+    /**
+     * carsEntering handles all the cars that enter the garage 
+     * @param queue grabs the correct queue
+     */
     private void carsEntering(CarQueue queue){
         int i=0;
         // Remove car from the front of the queue and assign to a parking space.
@@ -140,6 +166,9 @@ public class Simulator extends AbstractModel{
         }
     }
     
+    /**
+     * carsReadyToLeave puts the leaving cars into the correct queue
+     */
     private void carsReadyToLeave(){
         // Add leaving cars to the payment queue.
         Car car = parkeerGarage.getFirstLeavingCar();
@@ -155,6 +184,10 @@ public class Simulator extends AbstractModel{
         }
     }
 
+    /**
+     * carsPaying adds the paying cars to an int called PayingCars that will be used to calculate revenue.
+     * It also puts the cars into the exitCarQueue afterwards
+     */
     private void carsPaying(){
         // Let cars pay.
     	for (int i = 0; i < paymentSpeed; i++) {
@@ -174,7 +207,7 @@ public class Simulator extends AbstractModel{
     	}
     }
     
-    /*
+    /**
      * returns the amount of cars that will pay 
      * @return PayingCars
      */
@@ -182,8 +215,9 @@ public class Simulator extends AbstractModel{
     	return PayingCars;
     }
 
-	
-    
+    /**
+     * carsLeaving removes the car from the simulator
+     */
     private void carsLeaving(){
         // Let cars leave.
     	int i=0;
@@ -193,6 +227,12 @@ public class Simulator extends AbstractModel{
     	}	
     }
     
+    /**
+     * gets the number of cars that arrive
+     * @param weekDay sets if its a weekday or not
+     * @param weekend sets if its a weekend or not
+     * @return a random amount of cars that arrive
+     */
     private int getNumberOfCars(int weekDay, int weekend){
         Random random = new Random();
 
@@ -207,7 +247,11 @@ public class Simulator extends AbstractModel{
         return (int)Math.round(numberOfCarsPerHour / 60);	
     }
 
-    
+    /**
+     * adds the newly arriving cars into the entrance queue
+     * @param numberOfCars sets the number of cars
+     * @param typesets the type of car
+     */
     private void addArrivingCars(int numberOfCars, String type){
         // Add the cars to the back of the queue.
     	switch(type) {
@@ -229,10 +273,19 @@ public class Simulator extends AbstractModel{
     	}
     }
     
+    /**
+     * Removes the car from a spot inside the garage
+     * @param car sets the car that is leaving
+     */
     private void carLeavesSpot(Car car){
     	parkeerGarage.removeCarAt(car.getLocation());
         exitCarQueue.addCar(car);
     }
+    
+    
+    /**
+     * All the methods below are getters and setters used by the buttons and textfields in QueueView and ChangeController
+     */
     
     public int getEntranceCarQueue() {
     	return entranceCarQueue.carsInQueue(); 

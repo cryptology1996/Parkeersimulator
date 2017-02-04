@@ -39,7 +39,7 @@ public class TextOverview extends AbstractView {
 		this.setLayout(new FlowLayout());
 		this.setBackground(Color.LIGHT_GRAY);
 		
-		/*
+		/**
 		 * Revenue JTextField en JLabel
 		 */
 		JLabel lblRevenue = new JLabel("Total revenue:                                           ");
@@ -51,7 +51,7 @@ public class TextOverview extends AbstractView {
 		add(txtRevenue);
 		
 	
-		/*
+		/**
 		 * Expected revenue JTextField en JLabel
 		 */
 		JLabel expRevL = new JLabel("Revenue of remaining cars:                  ");
@@ -62,7 +62,7 @@ public class TextOverview extends AbstractView {
 		add(expRevL);
 		add(txtExpRevenue);
 		
-		/*
+		/*8
 		 * Add everything to the JPanel
 		 */
 		

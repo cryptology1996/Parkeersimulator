@@ -23,8 +23,9 @@ public class Main {
 		    PieView PieView = new PieView(simulator);
 		    TypeOfCarView TypeOfCarView = new TypeOfCarView(simulator);
 		    QueueView queueView = new QueueView(simulator);
+		    ChangeController changeController = new ChangeController(simulator);
 			JFrame screen = new JFrame("Parkeergarage Simulator");
-			screen.setSize(900, 900);
+			screen.setSize(1200, 1000);
 			screen.getRootPane().setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.DARK_GRAY));
 			screen.setResizable(false);
 			screen.setLayout(null);
@@ -36,18 +37,22 @@ public class Main {
 			screen.getContentPane().add(PieView);
 			screen.getContentPane().add(TypeOfCarView);
 			screen.getContentPane().add(queueView);
+			screen.getContentPane().add(changeController);
 			
 			
-			controller.setBounds(5, 775, 875, 75);
+			controller.setBounds(167, 910, 875, 50);
 			CarParkView.setBounds(5, 10, 875, 445);
 			textoverview.setBounds(150, 450, 600, 40);
 			PieView.setBounds(610, 490, 272, 272);
 			TypeOfCarView.setBounds(300, 600, 300, 130);
-			queueView.setBounds(100, 600, 150, 130);
+			queueView.setBounds(200, 800, 150, 130);
+			
+			changeController.setBounds(5, 500, 200, 200);
 			
 			
 			PieView.setBackground(Color.LIGHT_GRAY);
 			CarParkView.setBackground(Color.LIGHT_GRAY);
+			changeController.setBackground(Color.LIGHT_GRAY);
 			
 			
 			TypeOfCarView.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -55,6 +60,7 @@ public class Main {
 			CarParkView.setBorder(BorderFactory.createLineBorder(Color.black));
 			controller.setBorder(BorderFactory.createLineBorder(Color.black));
 			queueView.setBorder(BorderFactory.createLineBorder(Color.black));
+			changeController.setBorder(BorderFactory.createLineBorder(Color.black));
 			
 			
 			

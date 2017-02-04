@@ -9,44 +9,97 @@ import java.io.IOException;
 import Model.*;
 
 public class ChangeController extends AbstractController implements ActionListener {
-	private JButton WeekAdHoc;
-	private JButton WeekendAdHoc;
-	private JButton WeekDayPass;
-	private JButton WeekendPass;
-	private JButton WeekReserve;
-	private JButton WeekendReserve;
+	private JLabel WeekAdHoc;
+	private JLabel WeekendAdHoc;
+	private JLabel WeekDayPass;
+	private JLabel WeekendPass;
+	private JLabel WeekReserve;
+	private JLabel WeekendReserve;
 	private ActionEvent event;
+	
+	private JButton Set;
+	private JButton Reset;
+	
+	private JTextField WeekAH;
+	private JTextField WeekendAH;
+	private JTextField WeekP;
+	private JTextField WeekendP;
+	private JTextField WeekRes;
+	private JTextField WeekendRes;
 	
 	
 	public ChangeController(Simulator simulator) {
 		super (simulator);
 		
 		
-		WeekAdHoc = new JButton("Weekday AdHoc");
-		WeekAdHoc.addActionListener((ActionListener) this);
+		WeekAdHoc = new JLabel("Weekday AdHoc:   ");
+		WeekAH = new JTextField(5);
+		WeekAH.setText("60");
+		WeekAH.setEditable(true);
+		add(WeekAdHoc);
+		add(WeekAH);
 		
-		WeekendAdHoc = new JButton("Weekend AdHoc");
-		WeekendAdHoc.addActionListener((ActionListener) this);
-		
-		
-		WeekDayPass = new JButton("Weekday Pass");
-		WeekDayPass.addActionListener((ActionListener) this);
-		
-		
-		WeekendPass = new JButton("Weekend Pass");
-		WeekendPass.addActionListener((ActionListener) this);
-		
-		
-		WeekReserve = new JButton("Week Reserve");
-		WeekReserve.addActionListener((ActionListener) this);
+		WeekendAdHoc = new JLabel("Weekend AdHoc:   ");
+		WeekendAH = new JTextField(5);
+		WeekendAH.setText("100");
+		WeekendAH.setEditable(true);
+		add(WeekendAdHoc);
+		add(WeekendAH);
 		
 		
-		WeekendReserve = new JButton("Weekend Reserve");
-		WeekendReserve.addActionListener((ActionListener) this);
+		WeekDayPass = new JLabel("Weekday Pass:      ");
+		WeekP = new JTextField(5);
+		WeekP.setText("25");
+		WeekP.setEditable(true);
+		add(WeekDayPass);
+		add(WeekP);
+		
+		
+		WeekendPass = new JLabel("Weekend Pass:      ");
+		WeekendP = new JTextField(5);
+		WeekendP.setText("10");
+		WeekendP.setEditable(true);
+		add(WeekendPass);
+		add(WeekendP);
+		
+		
+		WeekReserve = new JLabel("Week Reserve:       ");
+		WeekRes = new JTextField(5);
+		WeekRes.setText("25");
+		WeekRes.setEditable(true);
+		add(WeekReserve);
+		add(WeekRes);
+		
+		
+		WeekendReserve = new JLabel("Weekend Reserve");
+		WeekendRes = new JTextField(5);
+		WeekendRes.setText("10");
+		WeekendRes.setEditable(true);
+		add(WeekendReserve);
+		add(WeekendRes);
+		
+		Set = new JButton("Set");
+		Set.addActionListener((ActionListener) this);
+		Set.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+		Set.setPreferredSize(new Dimension(70, 20));
+		add(Set);
+		
+		Reset = new JButton("Reset");
+		Reset.addActionListener((ActionListener) this);
+		Reset.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+		Reset.setPreferredSize(new Dimension(70, 20));
+		add(Reset);
+		
+		
+		
 		
 		
 		
 	}
+		
+		
+		
+	
 	public void setActionEvent(ActionEvent e) {
 		event = e;
 	}
@@ -76,12 +129,56 @@ public class ChangeController extends AbstractController implements ActionListen
 			 public void run (){
 				ActionEvent e = getActionEvent();
 				String command = e.getActionCommand();
-				if (command == "Weekday AdHoc"){
-					// methode aanroepen 
+			
+			if (command == "Set"){
+					int Weekah  = Integer.parseInt(WeekAH.getText().trim());
+					simulator.ChangeWeekAH(Weekah);
 					
-					// int y = Integer.parseInt(string);
-					// WeekdayArrivals = y;
-				} 
+					int Weekendah  = Integer.parseInt(WeekendAH.getText().trim());
+					simulator.ChangeWeekendAH(Weekendah);
+					
+					int weekp  = Integer.parseInt(WeekP.getText().trim());
+					simulator.ChangeWeekP(weekp);
+					
+					int weekendp  = Integer.parseInt(WeekendP.getText().trim());
+					simulator.ChangeWeekendP(weekendp);
+					
+					int weekres = Integer.parseInt(WeekRes.getText().trim());
+					simulator.ChangeWeekRes(weekres);
+					
+					int Weekendres  = Integer.parseInt(WeekendRes.getText().trim());
+					simulator.ChangeWeekendRes(Weekendres);
+					
+					WeekAH.setEditable(false);
+					WeekendAH.setEditable(false);
+					WeekP.setEditable(false);
+					WeekendP.setEditable(false);
+					WeekRes.setEditable(false);
+					WeekendRes.setEditable(false);
+				}
+			
+			if (command == "Reset"){
+				
+				WeekAH.setEditable(true);
+				WeekAH.setText("60");
+				
+				WeekendAH.setEditable(true);
+				WeekendAH.setText("100");
+				
+				WeekP.setEditable(true);
+				WeekP.setText("25");
+				
+				WeekendP.setEditable(true);
+				WeekendP.setText("10");
+				
+				WeekRes.setEditable(true);
+				WeekRes.setText("25");
+				
+				WeekendRes.setEditable(true);
+				WeekendRes.setText("10");
+				
+				
+			}
 			}
 			};
 			performerThread.start();

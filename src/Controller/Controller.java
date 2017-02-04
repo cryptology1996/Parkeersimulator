@@ -1,10 +1,7 @@
 package Controller;
 
 import javax.swing.*;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
@@ -40,9 +37,9 @@ public Controller(Simulator simulator) {
     	een = new JButton("One Step");
     	een.addActionListener((ActionListener) this);
     	GridBagConstraints l1 = new GridBagConstraints();
-		l1.fill = GridBagConstraints.HORIZONTAL;
+		l1.fill = GridBagConstraints.BOTH;
         l1.weightx = 3;
-        l1.ipady = 20;
+        l1.weighty = 0;
         l1.gridx = 0;
         l1.gridy = 0;
         een.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
@@ -51,9 +48,9 @@ public Controller(Simulator simulator) {
         honderd= new JButton("Hundred Steps");
         honderd.addActionListener((ActionListener) this);
         GridBagConstraints l2 = new GridBagConstraints();
-		l2.fill = GridBagConstraints.HORIZONTAL;
+		l2.fill = GridBagConstraints.BOTH;
         l2.weightx = 3;
-        l2.ipady = 20;
+        l1.weighty = 0;
         l2.gridx = 1;
         l2.gridy = 0;
         honderd.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
@@ -62,9 +59,9 @@ public Controller(Simulator simulator) {
         start= new JButton("Start");
         start.addActionListener((ActionListener) this);
         GridBagConstraints l3 = new GridBagConstraints();
-		l3.fill = GridBagConstraints.HORIZONTAL;
+		l3.fill = GridBagConstraints.BOTH;
         l3.weightx = 3;
-        l3.ipady = 20;
+        l1.weighty = 0;
         l3.gridx = 2;
         l3.gridy = 0;
         start.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
@@ -73,9 +70,9 @@ public Controller(Simulator simulator) {
         stop= new JButton("Reset");
         stop.addActionListener((ActionListener) this);
         GridBagConstraints l4 = new GridBagConstraints();
-		l4.fill = GridBagConstraints.HORIZONTAL;
+		l4.fill = GridBagConstraints.BOTH;
         l4.weightx = 3;
-        l4.ipady = 20;
+        l1.weighty = 0;
         l4.gridx = 3;
         l4.gridy = 0;
         stop.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
@@ -145,7 +142,4 @@ public void actionPerformed(ActionEvent e)
 		}
 
 }
-
-
-
 

@@ -13,7 +13,7 @@ import Model.*;
 
 public class QueueView extends AbstractView{
 	private JTextField txtEntranceQueue;
-	private JTextField txtEntranceApssQueue;
+	private JTextField txtEntrancePassQueue;
 	private JTextField txtExitQueue;
 	private Simulator simulator;
 
@@ -47,14 +47,14 @@ public class QueueView extends AbstractView{
 		 * Entrance Pass Queue JTextField and JLabel
 		 */
 		
-		JLabel lblEntranceApssQueue = new JLabel("Entrance Pass Queue:                            ");
-		txtEntranceApssQueue = new JTextField("        0");
-		txtEntranceApssQueue.setColumns(5);
-		txtEntranceApssQueue.setEditable(false);
-		txtEntranceApssQueue.setBackground(Color.LIGHT_GRAY);
-		txtEntranceApssQueue.setBorder(BorderFactory.createLineBorder(Color.black,1));
-		queue.add(lblEntranceApssQueue);
-		queue.add(txtEntranceApssQueue);
+		JLabel lblEntrancePassQueue = new JLabel("Entrance Pass Queue:                            ");
+		txtEntrancePassQueue = new JTextField("        0");
+		txtEntrancePassQueue.setColumns(5);
+		txtEntrancePassQueue.setEditable(false);
+		txtEntrancePassQueue.setBackground(Color.LIGHT_GRAY);
+		txtEntrancePassQueue.setBorder(BorderFactory.createLineBorder(Color.black,1));
+		queue.add(lblEntrancePassQueue);
+		queue.add(txtEntrancePassQueue);
 		
 		/*
 		 * Exit Queue JTextField and JLabel
@@ -99,8 +99,8 @@ public class QueueView extends AbstractView{
 	 */
 	
 	public void entrancePassQueue() {
-	int entrancePassQueue = simulator.getEntranceCarQueue() + simulator.getPassCarQueue();
-	txtEntranceQueue.setText("        "+entrancePassQueue);
+	int entrancePassQueue = simulator.getPassCarQueue();
+	txtEntrancePassQueue.setText("        "+entrancePassQueue);
 	}
 	
 	/*

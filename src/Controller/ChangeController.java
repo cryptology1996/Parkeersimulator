@@ -217,7 +217,7 @@ public class ChangeController extends AbstractController implements ActionListen
 					paySpeedtxt.setEditable(false);
 					exitSpeedtxt.setEditable(false);
 					
-					simulator.CheckIsSet(true);
+					simulator.setSet(true);
 				}
 			
 			if (command == "Reset"){
@@ -249,7 +249,7 @@ public class ChangeController extends AbstractController implements ActionListen
 				exitSpeedtxt.setEditable(true);
 				exitSpeedtxt.setText("5");
 				
-				simulator.CheckIsSet(false);
+				simulator.setSet(false);
 				
 				
 			}

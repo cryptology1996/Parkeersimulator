@@ -134,14 +134,6 @@ public void actionPerformed(ActionEvent e)
 			
 			simulator.setStop(true);
 			
-			//try {
-			//	Runtime.getRuntime().exec("java -jar Parkeergarage.jar");
-			//	} catch (IOException e1) {
-			//		
-			//	e1.printStackTrace();
-			//	}
-			//     System.exit(1);
-				
 			}
 	
 		}

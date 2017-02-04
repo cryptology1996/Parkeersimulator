@@ -9,6 +9,10 @@ import Controller.*;
 import Model.*;
 import View.*;
 
+/*
+ * Creates the public static void main(String [] args) the program uses to start up.
+ * Also creates all the view and controller instances.
+ */
 
 public class Main {
 	
@@ -100,7 +104,7 @@ public class Main {
 			textoverview.setBorder(BorderFactory.createLineBorder(Color.black));
 			
 			/*
-			 * Set th JFrame visible
+			 * Set the JFrame visible
 			 */
 			screen.setVisible(true);
 			

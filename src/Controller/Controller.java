@@ -33,6 +33,7 @@ public Controller(Simulator simulator) {
 		setLayout(new GridBagLayout());
     	setBackground(Color.LIGHT_GRAY);
     	setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY,8));
+    	Color backgroundB = new Color(0x0C97C5);
     	
     	een = new JButton("One Step");
     	een.addActionListener((ActionListener) this);
@@ -42,7 +43,9 @@ public Controller(Simulator simulator) {
         l1.ipady = 30;
         l1.gridx = 0;
         l1.gridy = 0;
-        een.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+        een.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
+		een.setBackground(backgroundB);
+		een.setForeground(Color.WHITE);
         add(een, l1);
         
         honderd= new JButton("Hundred Steps");
@@ -53,7 +56,9 @@ public Controller(Simulator simulator) {
         l2.ipady = 30;
         l2.gridx = 1;
         l2.gridy = 0;
-        honderd.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+        honderd.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
+		honderd.setBackground(backgroundB);
+		honderd.setForeground(Color.WHITE);
         add(honderd, l2);
        
         start= new JButton("Start");
@@ -64,7 +69,9 @@ public Controller(Simulator simulator) {
         l3.ipady = 30;
         l3.gridx = 2;
         l3.gridy = 0;
-        start.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+        start.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
+		start.setBackground(backgroundB);
+		start.setForeground(Color.WHITE);
         add(start, l3);
        
         stop= new JButton("Stop");
@@ -75,7 +82,9 @@ public Controller(Simulator simulator) {
         l4.ipady = 30;
         l4.gridx = 3;
         l4.gridy = 0;
-        stop.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+        stop.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
+		stop.setBackground(backgroundB);
+		stop.setForeground(Color.WHITE);
         add(stop, l4);
 	}
 

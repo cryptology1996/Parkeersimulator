@@ -83,13 +83,25 @@ public class Main {
 			TypeOfCarView.setBounds(245, 500, 300, 130);
 			queueView.setBounds(245, 640, 300, 80);
 			
+			/*
+			 * set colors for use in each Panel
+			 */
+			
+			Color backgroundA = new Color(0xDBEEF4);
+			Color backgroundC = new Color(0x131B84);
+			Color backgroundB = new Color(0xAAD0DD);
 			
 			/*
 			 * Set backgrounds
 			 */
-			PieView.setBackground(Color.LIGHT_GRAY);
-			CarParkView.setBackground(Color.LIGHT_GRAY);
-			changeController.setBackground(Color.LIGHT_GRAY);
+			screen.getContentPane().setBackground(backgroundC);
+			PieView.setBackground(backgroundB);
+			changeController.setBackground(backgroundB);
+			
+			TypeOfCarView.setBackground(backgroundA);
+			queueView.setBackground(backgroundA);
+			textoverview.setBackground(backgroundA);
+			
 			
 			
 			/*
@@ -100,7 +112,7 @@ public class Main {
 			
 			TypeOfCarView.setBorder(BorderFactory.createLineBorder(Color.black));
 			PieView.setBorder(BorderFactory.createLineBorder(Color.black));
-			CarParkView.setBorder(BorderFactory.createLineBorder(Color.black));
+			CarParkView.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.DARK_GRAY));
 			queueView.setBorder(BorderFactory.createLineBorder(Color.black));
 			textoverview.setBorder(BorderFactory.createLineBorder(Color.black));
 			

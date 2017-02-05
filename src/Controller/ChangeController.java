@@ -51,7 +51,15 @@ public class ChangeController extends AbstractController implements ActionListen
 	public ChangeController(Simulator simulator) {
 		super (simulator);
 		
+		/*
+		 * Add a color for buttons
+		 */
 		
+		Color backgroundB = new Color(0x0C97C5);
+		
+		/*
+		 * Create each textField, labels and buttons
+		 */
 		WeekAdHoc = new JLabel("Weekday AdHoc:    ");
 		WeekAH = new JTextField(5);
 		WeekAH.setText("60");
@@ -126,14 +134,18 @@ public class ChangeController extends AbstractController implements ActionListen
 		
 		Set = new JButton("Set");
 		Set.addActionListener((ActionListener) this);
-		Set.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+		Set.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
 		Set.setPreferredSize(new Dimension(70, 20));
+		Set.setBackground(backgroundB);
+		Set.setForeground(Color.WHITE);
 		add(Set);
 		
 		Reset = new JButton("Reset");
 		Reset.addActionListener((ActionListener) this);
-		Reset.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+		Reset.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
 		Reset.setPreferredSize(new Dimension(70, 20));
+		Reset.setBackground(backgroundB);
+		Reset.setForeground(Color.WHITE);
 		add(Reset);
 		
 		
@@ -221,6 +233,7 @@ public class ChangeController extends AbstractController implements ActionListen
 					
 					simulator.setSet(true);
 					simulator.setStart(false);
+
 				}
 			
 			if (command == "Reset"){

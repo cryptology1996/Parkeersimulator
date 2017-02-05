@@ -37,13 +37,12 @@ public class TextOverview extends AbstractView {
 		 * Create the panel
 		 */
 		this.setLayout(new FlowLayout());
-		this.setBackground(Color.LIGHT_GRAY);
 		
 		/**
 		 * Revenue JTextField en JLabel
 		 */
-		JLabel lblRevenue = new JLabel("Total revenue:                                           ");
-		txtRevenue = new JTextField(5);
+		JLabel lblRevenue = new JLabel("Total revenue:                                         ");
+		txtRevenue = new JTextField(4);
 		txtRevenue.setEditable(false);
 		txtRevenue.setBackground(Color.LIGHT_GRAY);
 		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -54,8 +53,8 @@ public class TextOverview extends AbstractView {
 		/**
 		 * Expected revenue JTextField en JLabel
 		 */
-		JLabel expRevL = new JLabel("Revenue of remaining cars:                  ");
-		txtExpRevenue = new JTextField(5);
+		JLabel expRevL = new JLabel("Revenue of remaining cars:                ");
+		txtExpRevenue = new JTextField(4);
 		txtExpRevenue.setEditable(false);
 		txtExpRevenue.setBackground(Color.LIGHT_GRAY);
 		txtExpRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));

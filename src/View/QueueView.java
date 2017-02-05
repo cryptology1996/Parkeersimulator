@@ -30,6 +30,7 @@ public class QueueView extends AbstractView{
 		JLabel lblEntranceQueue = new JLabel("Entrance Queue:                                    ");
 		txtEntranceQueue = new JTextField("   0");
 		txtEntranceQueue.setColumns(4);
+		txtEntranceQueue.setOpaque(false);
 		txtEntranceQueue.setEditable(false);
 		txtEntranceQueue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(lblEntranceQueue);
@@ -43,6 +44,7 @@ public class QueueView extends AbstractView{
 		txtEntrancePassQueue = new JTextField("   0");
 		txtEntrancePassQueue.setColumns(4);
 		txtEntrancePassQueue.setEditable(false);
+		txtEntrancePassQueue.setOpaque(false);
 		txtEntrancePassQueue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(lblEntrancePassQueue);
 		add(txtEntrancePassQueue);
@@ -54,6 +56,7 @@ public class QueueView extends AbstractView{
 		txtExitQueue = new JTextField("   0");
 		txtExitQueue.setColumns(4);
 		txtExitQueue.setEditable(false);
+		txtExitQueue.setOpaque(false);
 		txtExitQueue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(lblExitQueue);
 		add(txtExitQueue);

@@ -42,9 +42,9 @@ public class TextOverview extends AbstractView {
 		 * Revenue JTextField en JLabel
 		 */
 		JLabel lblRevenue = new JLabel("Total revenue:                                         ");
-		txtRevenue = new JTextField(5);
+		txtRevenue = new JTextField(6);
 		txtRevenue.setEditable(false);
-		txtRevenue.setBackground(Color.LIGHT_GRAY);
+		txtRevenue.setOpaque(false);
 		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(lblRevenue);
 		add(txtRevenue);
@@ -54,9 +54,9 @@ public class TextOverview extends AbstractView {
 		 * Expected revenue JTextField en JLabel
 		 */
 		JLabel expRevL = new JLabel("Revenue of remaining cars:                ");
-		txtExpRevenue = new JTextField(5);
+		txtExpRevenue = new JTextField(6);
 		txtExpRevenue.setEditable(false);
-		txtExpRevenue.setBackground(Color.LIGHT_GRAY);
+		txtExpRevenue.setOpaque(false);
 		txtExpRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(expRevL);
 		add(txtExpRevenue);

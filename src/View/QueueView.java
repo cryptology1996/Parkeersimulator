@@ -23,11 +23,7 @@ public class QueueView extends AbstractView{
 	public QueueView(Simulator model) {
 		super(model);
 		this.simulator = model;
-		
-		/**
-		 * Create the panel
-
-		
+			
 		/**
 		 * Entrance Queue JTextField and JLabel
 		 */
@@ -61,11 +57,7 @@ public class QueueView extends AbstractView{
 		txtExitQueue.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(lblExitQueue);
 		add(txtExitQueue);
-		
-		
-		/*
-		 * Using Entrance and Exit Car Queue		
-		 */
+
 		
 	}
 	
@@ -84,7 +76,7 @@ public class QueueView extends AbstractView{
 	
 	public void entranceQueue() {
 		int entranceQueue = simulator.getEntranceCarQueue();
-		txtEntranceQueue.setText("        "+entranceQueue);
+		txtEntranceQueue.setText("   "+entranceQueue);
 	}
 	
 	/**
@@ -93,7 +85,7 @@ public class QueueView extends AbstractView{
 	
 	public void entrancePassQueue() {
 	int entrancePassQueue = simulator.getPassCarQueue();
-	txtEntrancePassQueue.setText("        "+entrancePassQueue);
+	txtEntrancePassQueue.setText("   "+entrancePassQueue);
 	}
 	
 	/**
@@ -101,6 +93,6 @@ public class QueueView extends AbstractView{
 	 */
 	public void exitQueue() {
 		int exitQueue = simulator.getExitCarQueue();
-		txtExitQueue.setText("        "+exitQueue);
+		txtExitQueue.setText("   "+exitQueue);
 	}
 }

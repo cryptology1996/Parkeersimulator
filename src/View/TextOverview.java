@@ -42,7 +42,7 @@ public class TextOverview extends AbstractView {
 		 * Revenue JTextField en JLabel
 		 */
 		JLabel lblRevenue = new JLabel("Total revenue:                                         ");
-		txtRevenue = new JTextField(4);
+		txtRevenue = new JTextField(5);
 		txtRevenue.setEditable(false);
 		txtRevenue.setBackground(Color.LIGHT_GRAY);
 		txtRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -54,7 +54,7 @@ public class TextOverview extends AbstractView {
 		 * Expected revenue JTextField en JLabel
 		 */
 		JLabel expRevL = new JLabel("Revenue of remaining cars:                ");
-		txtExpRevenue = new JTextField(4);
+		txtExpRevenue = new JTextField(5);
 		txtExpRevenue.setEditable(false);
 		txtExpRevenue.setBackground(Color.LIGHT_GRAY);
 		txtExpRevenue.setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -87,7 +87,7 @@ public class TextOverview extends AbstractView {
 		
 		int totalCars = simulator.getPayingCars();	
 		double totalRevenue = totalCars * ticketPrice;
-		txtRevenue.setText(" € "+totalRevenue);
+		txtRevenue.setText(" € "+totalRevenue+"0");
 	}
 	
 	/**
@@ -99,6 +99,6 @@ public class TextOverview extends AbstractView {
 	
 	double totalExpRevenue = totalCarsLeft * ticketPrice;
 	
-		txtExpRevenue.setText(" € "+totalExpRevenue);	
+		txtExpRevenue.setText(" € "+totalExpRevenue+"0");	
 	}
 }

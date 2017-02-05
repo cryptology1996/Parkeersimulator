@@ -64,6 +64,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		WeekAH = new JTextField(5);
 		WeekAH.setText("60");
 		WeekAH.setEditable(true);
+		WeekAH.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(WeekAdHoc);
 		add(WeekAH);
 		
@@ -71,6 +72,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		WeekendAH = new JTextField(5);
 		WeekendAH.setText("100");
 		WeekendAH.setEditable(true);
+		WeekendAH.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(WeekendAdHoc);
 		add(WeekendAH);
 		
@@ -79,6 +81,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		WeekP = new JTextField(5);
 		WeekP.setText("25");
 		WeekP.setEditable(true);
+		WeekP.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(WeekDayPass);
 		add(WeekP);
 		
@@ -87,6 +90,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		WeekendP = new JTextField(5);
 		WeekendP.setText("10");
 		WeekendP.setEditable(true);
+		WeekendP.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(WeekendPass);
 		add(WeekendP);
 		
@@ -95,6 +99,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		WeekRes = new JTextField(5);
 		WeekRes.setText("25");
 		WeekRes.setEditable(true);
+		WeekRes.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(WeekReserve);
 		add(WeekRes);
 		
@@ -103,6 +108,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		WeekendRes = new JTextField(5);
 		WeekendRes.setText("10");
 		WeekendRes.setEditable(true);
+		WeekendRes.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(WeekendReserve);
 		add(WeekendRes);
 		
@@ -113,6 +119,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		entrySpeedtxt = new JTextField(5);
 		entrySpeedtxt.setText("3");
 		entrySpeedtxt.setEditable(true);
+		entrySpeedtxt.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(EntrySpeed);
 		add(entrySpeedtxt);
 		
@@ -120,6 +127,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		paySpeedtxt = new JTextField(5);
 		paySpeedtxt.setText("5");
 		paySpeedtxt.setEditable(true);
+		paySpeedtxt.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(PaySpeed);
 		add(paySpeedtxt);
 		
@@ -127,6 +135,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		exitSpeedtxt = new JTextField(5);
 		exitSpeedtxt.setText("7");
 		exitSpeedtxt.setEditable(true);
+		exitSpeedtxt.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		add(ExitSpeed);
 		add(exitSpeedtxt);
 		

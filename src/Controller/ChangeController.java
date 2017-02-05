@@ -95,7 +95,7 @@ public class ChangeController extends AbstractController implements ActionListen
 		add(WeekendP);
 		
 		
-		WeekReserve = new JLabel("Week Reserve:        ");
+		WeekReserve = new JLabel("Weekday Reserve: ");
 		WeekRes = new JTextField(5);
 		WeekRes.setText("25");
 		WeekRes.setEditable(true);

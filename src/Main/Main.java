@@ -101,6 +101,7 @@ public class Main {
 			TypeOfCarView.setBackground(backgroundA);
 			queueView.setBackground(backgroundA);
 			textoverview.setBackground(backgroundA);
+			screen.setBackground(backgroundA);
 			
 			
 			

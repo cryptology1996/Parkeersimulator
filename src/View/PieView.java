@@ -58,10 +58,7 @@ public class PieView extends AbstractView {
   
         g.setColor(Color.white);
         g.fillArc(15, 15, 250, 250, 350, 360);
-        g.setColor(Color.black);
-        g2.setStroke(new BasicStroke(3));
-        g2.drawArc(14, 14, 252, 252, 350, 360);
-        
+     
         g.setColor(Color.red);
         g.fillArc(15, 15, 250, 250, 0, calculateDegrees(aantalAdHoc));
         g.setColor(Color.orange);
